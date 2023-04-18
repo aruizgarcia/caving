@@ -1,0 +1,15 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "user_commands.xdv" "user_commands.pdf" "user_commands" 0
+  "user_commands.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "user_commands.pdf"
+["xelatex"] 1614352110 "user_commands.tex" "user_commands.xdv" "user_commands" 1614352110
+  "/etc/texmf/web2c/texmf.cnf" 1573069162 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1612126495 2478016 1f5c2270d6f157e1d560ab65a24c12a3 ""
+  "user_commands.aux" 1614352110 8 a94a2480d3289e625eea47cd1b285758 ""
+  "user_commands.tex" 1614352109 1119 fa8f9a2dc6fdfe6f3b315d149a5946ed ""
+  (generated)
+  "user_commands.log"
+  "user_commands.xdv"

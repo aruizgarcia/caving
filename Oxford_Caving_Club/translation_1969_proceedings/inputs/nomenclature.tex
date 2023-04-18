@@ -1,0 +1,86 @@
+% For the nomenclature to be printed, it is necessary to create a file called ".latexmkrc", with: 
+%# Custom dependency and function for nomencl package
+%add_cus_dep( 'nlo', 'nls', 0, 'makenlo2nls' );
+%sub makenlo2nls {
+%    system( "makeindex -s nomencl.ist -o \"$_[0].nls\" \"$_[0].nlo\"" );
+%}
+%%%%%%%%%%
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\newcommand{\Units}[1]{\hfill\makebox[8em]{#1}\ignorespaces}
+\newcommand{\DefinitionCol}[1]{\hfill\parbox[t]{8em}{#1}\ignorespaces}
+
+\newcommand{\nomsubtitle}[1]{\item[\large\bfseries\sffamily #1]}
+
+\renewcommand\nomgroup[1]{\def\nomtemp{\csname nomstart#1\endcsname}\nomtemp}
+
+\newcommand{\nomstartR}{\nomsubtitle{Roman Symbols}%
+  \item[\bfseries Symbol]%
+  \textbf{Description}\Units{\textbf{Units}}}
+\newcommand{\nomstartG}{\nomsubtitle{Greek Symbols}%
+  \item[\bfseries Symbol]%
+  \textbf{Description}\Units{\textbf{Units}}}
+\newcommand{\nomstartD}{\nomsubtitle{Dimensionless Numbers}%
+  \item[\bfseries Symbol]\textbf{Description}\DefinitionCol{\textbf{Definition}}}
+\newcommand{\nomstartA}{\nomsubtitle{Acronyms and abbreviations}%
+  \item[\bfseries Acronym]%
+  \textbf{Description}}
+
+\renewcommand*{\nompreamble}{\markboth{\nomname}{\nomname}}
+
+\newcommand{\nomdef}[1]{\parbox[t]{13cm}{\RaggedRight #1}}
+\newcommand{\nomdescr}[1]{\parbox[t]{10cm}{\RaggedRight #1}}
+\newcommand{\nomwithdim}[4]{\nomenclature[#1]{#2}%
+{\nomdescr{#3}\Units{#4}}}
+\newcommand{\nomacronym}[3]{\nomenclature[#1]{#2}%
+{\nomdef{#3}}}
+\newcommand{\nomtypeR}[4][]{\nomwithdim{R#1}{#2}{#3}{#4}}
+\newcommand{\nomtypeG}[4][]{\nomwithdim{G#1}{#2}{#3}{#4}}
+\newcommand{\nomtypeD}[4][]{\nomenclature[D#1]{#2}{\nomdescr{#3}\DefinitionCol{#4}}}
+\newcommand{\nomtypeA}[2][]{\nomacronym{A#1}{#2}}
+\makenomenclature
+
+\mbox{}
+
+% Definitions
+%\nomtypeD{\( \mathcal A_r \)}{Archimedes number}{\(\displaystyle
+%\frac{d^3g\rho_c\abs{\Delta\rho}}{\mu_c^2} = \sqrt{\frac{\mathcal
+%E_0^3}{\mathcal M_0}} \)}
+
+% Acronyms and abbreviations
+\nomtypeA[Aftis]{FTIS}{Flight Test Instrumentation System}
+\nomtypeA[Aols]{OLS}{Ordinary Least Squares}
+\nomtypeA[Afcs]{FCS}{Flight Control System}
+\nomtypeA[Aafcs]{AFCS}{Automatic Flight Control System}
+\nomtypeA[Acfd]{CFD}{Computational Fluid Dynamics}
+\nomtypeA[Ablue]{BLUE}{Best Linear Unbiased Estimator}
+\nomtypeA[Amse]{MSE}{Minimum Square Error}
+\nomtypeA[Atse]{RMS}{Root Mean Square}
+\nomtypeA[Agps]{GPS}{Global Positioning System}
+% GREEK SYMBOLS
+\nomtypeG[Grho]{$\rho$}{Density}{$[\mathrm{kg/m^3]}$}
+\nomtypeG[Gnu]{$\nu$}{Kinematic viscosity}{$[\mathrm{m^2/s}]$}
+\nomtypeG[Gmu]{$\mu$}{Dynamic viscosity}{$[\mathrm{N\cdot s/m^2}]$}
+\nomtypeG[Gal]{$\alpha$}{Angle of attack}{$[\mathrm{rad,\degree}]$}
+\nomtypeG[Gbe]{$\beta$}{Sideslip angle}{$[\mathrm{rad,\degree}]$}
+% LATIN SYMBOLS
+\nomtypeR[Rq]{$q_\infty$}{Dynamic pressure}{$[\mathrm{kg\cdot m^{-1} s^{-2}}]$}
+\nomtypeR[Rv]{$V$}{Airspeed}{$[\mathrm{m/s}]$}
+\nomtypeR[Rc]{$\bar{c}$}{Reference chord}{$[\mathrm{m}]$}
+\nomtypeR[Rre]{Re}{Reynolds Number}{$[-]$}%{$\mathrm{Re} = \cfrac{U_\infty L}{\nu}$}
+\nomtypeR[Rma]{M}{Mach Number}{$[-]$}%{$\mathrm{M} = u/u_{sound}$}
+\nomtypeR[Rcd]{$C_D$}{Drag coefficient}{$[-]$}%{$c_d = \cfrac{D}{\frac{1}{2}\rho_\infty U_\infty^2 c}$}
+\nomtypeR[Rcl]{$C_L$}{Lift coefficient}{$[-]$}%{$c_l = \cfrac{L}{\frac{1}{2}\rho_\infty U_\infty^2 c}$}
+
+%Blade element method variables
+\nomtypeG[Gphb]{$\phi_b$}{Blade inflow angle}{$[\mathrm{rad,\degree}]$}
+\nomtypeG[Gthb]{ $\theta_b$}{Blade pitch angle}{$[\mathrm{rad,\degree}]$}
+\nomtypeG[Galb]{ $\alpha_b$}{Blade angle of attack, $\alpha_b = \theta_b - \phi_b$}{$[\mathrm{rad,\degree}]$}
+\nomtypeR[RV]{$V$}{Airspeed}{$[\mathrm{m/s}]$}
+\nomtypeR[RVba]{ $V_{b,ax}$} {Axial velocity at the blade}{$[\mathrm{m/s}]$}
+\nomtypeR[RVbt]{ $V_{b,tg}$} {Tangential velocity at the blade}{$[\mathrm{m/s}]$}
+\nomtypeR[RVb]{ $V_{b}$} {Blade local total velocity, $V_{b} = \sqrt{V_{b,ax}^2 + V_{b,tg}^2}$}{$[\mathrm{m/s}]$}
+
+\printnomenclature[6em]
+\todo[inline]{OLD NOMENCLATURE: update}

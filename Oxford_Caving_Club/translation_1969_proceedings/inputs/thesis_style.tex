@@ -1,0 +1,104 @@
+%!TEX root=/home/alber/Dropbox/Thesis/Literature Study/report/report.tex
+
+%=================================================================
+% Preamble with instructions for the document style
+%
+% Autor: 	Alberto Ruiz 
+% Fecha:	2018
+%=================================================================
+
+
+%=================================================================
+%					            CHAPTER HEADINGS 					
+%=================================================================
+
+\makechapterstyle{numbered_chapters}{%
+   \renewcommand*{\printchaptername}{\begin{flushright}{{\Huge{\textbf{Chapter \thechapter}}}}\end{flushright}}
+   \renewcommand*{\printchapternum}{\chapnumfont
+      \ifanappendix \thechapter}
+   \renewcommand*{\chaptitlefont}{\normalfont\HUGE\sffamily}
+   \renewcommand*{\printchaptertitle}[1]{%
+    \vspace{-30pt}\hrule\vskip\onelineskip \raggedleft \chaptitlefont ##1}
+   \renewcommand*{\afterchaptertitle}{%
+     \vskip\onelineskip \hrule\vskip \afterchapskip}
+   \setlength{\beforechapskip}{3\baselineskip}
+   \renewcommand*{\printchapternonum}{%
+     \vphantom{\chapnumfont One}
+     \afterchapternum%
+     \vskip\topskip}
+   \setlength{\beforechapskip}{2\onelineskip}
+ }% end{numbered_chapters}
+
+
+
+\makechapterstyle{not_numbered_chapters}{%
+   \renewcommand*{\printchapternum}{}
+   \renewcommand*{\chaptitlefont}{\HUGE\sffamily}
+   \renewcommand*{\printchaptertitle}[1]{%
+    \hrule\vskip\onelineskip \raggedleft \chaptitlefont ##1}
+   \renewcommand*{\afterchaptertitle}{%
+     \vskip\onelineskip \hrule\vskip \afterchapskip}
+   \setlength{\beforechapskip}{3\baselineskip}
+   \renewcommand*{\printchapternonum}{%
+     \vphantom{\chapnumfont One}
+     \afterchapternum%
+     \vskip\topskip}
+   \setlength{\beforechapskip}{2\onelineskip}
+ }% end{not_numbered_chapters}
+ 
+
+
+%=================================================================
+%					                PAGE STYLE							
+%=================================================================
+
+\makepagestyle{pagestyle_thesis}
+\makeevenhead{pagestyle_thesis}{\thepage}{}{\thesection}
+\makeoddhead{pagestyle_thesis}{}{}{\thepage}
+\makeatletter
+\makerunningwidth{pagestyle_thesis}{1.1\textwidth}
+\makeheadposition{pagestyle_thesis}{flushright}{flushleft}{flushright}{flushleft}
+\makeheadrule{pagestyle_thesis}{1.1\textwidth}{\normalrulethickness}
+\makeatother
+
+% Set pagestyle
+\pagestyle{pagestyle_thesis}
+
+
+
+%=================================================================
+%                         CAPTIONS STYLE              
+%=================================================================
+% Sans serif font for the caption name
+\captionnamefont{\sffamily}
+
+
+%=================================================================
+%                       TABLE OF CONTENTS              
+%=================================================================
+% Sans serif in TOC
+\renewcommand*{\cftchapterfont}{\normalfont\sffamily}
+
+% Max leven in TOC 
+\setcounter{tocdepth}{2}
+
+%=================================================================
+%                         NUMBERING               
+%=================================================================
+\setsecnumdepth{subsection} % Numbered subsections
+
+
+%=================================================================
+%                         DEFINITIONS               
+%=================================================================
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+
+%\newcounter{example}[chapter]
+%\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+%   \noindent \textbf{Example~\thechapter.\theexample. #1} \rmfamily \itshape}{\bigskip}
+%=================================================================
+%                TITLEPAGE (after the cover)          
+%=================================================================
+\input{inputs/titlepage.tex}

@@ -1,0 +1,25 @@
+% User-defined commands
+
+%$\renewcommand{\v}{\underline}								% Vector notation (underline)
+%\renewcommand\familydefault{\sfdefault}					% sffamily for the whole document
+\newcommand*\NewPage{\newpage\null\thispagestyle{empty}}	% Modified "newpage" command to solve problems with the page numbering
+\renewcommand{\d}{\mathrm{d}}
+
+% Vector style
+%\renewcommand{\v}[1]{\boldsymbol{\mathbf{#1}}} % Bold roman and greek letters 
+\renewcommand{\v}[1]{\mathbf{#1}}	% Only bold roman letters, greek letters remain unchanged
+
+\newcommand{\todoshort}[1]{{\colorbox{orange}{#1}} \addcontentsline{tdo}{todo}{#1}}
+
+\newcommand{\var}{\mathrm{Var}}
+\newcommand{\cov}{\mathrm{Cov}}
+\newcommand{\Cov}[1]{\mathrm{Cov}\left[{#1}\right]}
+\newcommand{\Var}[1]{\mathrm{Var}\left[{#1}\right]}
+\newcommand{\E}[1]{\mathrm{E}\left[{#1}\right]}
+\newcommand{\N}[1]{\mathcal{N}\left[{#1}\right]}
+\newcommand{\RMS}{\mathrm{RMS}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}		% To check some text
+\newcommand{\red}[1]{\textcolor{red}{#1}}		% Missing stuff
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}	% Warning stuff

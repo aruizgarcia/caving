@@ -1,0 +1,67 @@
+% For the nomenclature to be printed, it is necessary to create a file called ".latexmkrc", with: 
+%# Custom dependency and function for nomencl package
+%add_cus_dep( 'nlo', 'nls', 0, 'makenlo2nls' );
+%sub makenlo2nls {
+%    system( "makeindex -s nomencl.ist -o \"$_[0].nls\" \"$_[0].nlo\"" );
+%}
+%%%%%%%%%%
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\newcommand{\Units}[1]{\hfill\makebox[8em]{#1}\ignorespaces}
+\newcommand{\DefinitionCol}[1]{\hfill\parbox[t]{8em}{#1}\ignorespaces}
+
+\newcommand{\nomsubtitle}[1]{\item[\large\bfseries\sffamily #1]}
+
+\renewcommand\nomgroup[1]{\def\nomtemp{\csname nomstart#1\endcsname}\nomtemp}
+
+\newcommand{\nomstartR}{\nomsubtitle{Roman Symbols}%
+  \item[\bfseries Symbol]%
+  \textbf{Description}\Units{\textbf{Units}}}
+\newcommand{\nomstartG}{\nomsubtitle{Greek Symbols}%
+  \item[\bfseries Symbol]%
+  \textbf{Description}\Units{\textbf{Units}}}
+\newcommand{\nomstartD}{\nomsubtitle{Dimensionless Numbers}%
+  \item[\bfseries Symbol]\textbf{Description}\DefinitionCol{\textbf{Definition}}}
+\newcommand{\nomstartA}{\nomsubtitle{Acronyms and abbreviations}%
+  \item[\bfseries Acronym]%
+  \textbf{Description}}
+
+\renewcommand*{\nompreamble}{\markboth{\nomname}{\nomname}}
+
+\newcommand{\nomdef}[1]{\parbox[t]{13cm}{\RaggedRight #1}}
+\newcommand{\nomdescr}[1]{\parbox[t]{10cm}{\RaggedRight #1}}
+\newcommand{\nomwithdim}[4]{\nomenclature[#1]{#2}%
+{\nomdescr{#3}\Units{#4}}}
+\newcommand{\nomacronym}[3]{\nomenclature[#1]{#2}%
+{\nomdef{#3}}}
+\newcommand{\nomtypeR}[4][]{\nomwithdim{R#1}{#2}{#3}{#4}}
+\newcommand{\nomtypeG}[4][]{\nomwithdim{G#1}{#2}{#3}{#4}}
+\newcommand{\nomtypeD}[4][]{\nomenclature[D#1]{#2}{\nomdescr{#3}\DefinitionCol{#4}}}
+\newcommand{\nomtypeA}[2][]{\nomacronym{A#1}{#2}}
+\makenomenclature
+
+\mbox{}
+
+% Roman symbols
+\nomtypeR[abc]{\(a,b,c\)}{half axes of ellipsoid}{\si{m}}
+\nomtypeR[C]{\(C\)}{dimensionless coefficient (e.g.\ for drag model)}{1}
+\nomtypeR[CC]{\(\mathbf{C}\)}{another dimensionless coefficient}{1}
+\nomtypeR[A]{\(A\)}{a dimensionless coefficient}{1}
+\nomtypeR[Z]{\(Z\)}{a dimensionless coefficient}{1}
+
+% Greek symbols
+\nomtypeG{\( \varepsilon_0 \)}{vacuum permittivity}{\si{F.m^{-1}}}
+
+% Definitions
+%\nomtypeD{\( \mathcal A_r \)}{Archimedes number}{\(\displaystyle
+%\frac{d^3g\rho_c\abs{\Delta\rho}}{\mu_c^2} = \sqrt{\frac{\mathcal
+%E_0^3}{\mathcal M_0}} \)}
+
+% Acronyms and abbreviations
+\nomtypeA[Ausace]{USACE}{United States Army Corps of Engineers}
+\nomtypeA[Aeos]{EOS}{Emergency Operation Schedules}
+\nomtypeA[Ausa]{USA}{United States of America}
+\nomtypeA[Anoaa]{NOAA}{National Oceanic and Atmospheric Administration}
+
+\printnomenclature[6em]

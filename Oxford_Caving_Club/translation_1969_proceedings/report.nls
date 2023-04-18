@@ -1,0 +1,35 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{AFCS}]\begingroup \nomdef {Automatic Flight Control System}\nomeqref {0}\nompageref{g}
+  \item [{BLUE}]\begingroup \nomdef {Best Linear Unbiased Estimator}\nomeqref {0}\nompageref{g}
+  \item [{CFD}]\begingroup \nomdef {Computational Fluid Dynamics}\nomeqref {0}\nompageref{g}
+  \item [{FCS}]\begingroup \nomdef {Flight Control System}\nomeqref {0}\nompageref{g}
+  \item [{FTIS}]\begingroup \nomdef {Flight Test Instrumentation System}\nomeqref {0}\nompageref{g}
+  \item [{GPS}]\begingroup \nomdef {Global Positioning System}\nomeqref {0}\nompageref{g}
+  \item [{MSE}]\begingroup \nomdef {Minimum Square Error}\nomeqref {0}\nompageref{g}
+  \item [{OLS}]\begingroup \nomdef {Ordinary Least Squares}\nomeqref {0}\nompageref{g}
+  \item [{RMS}]\begingroup \nomdef {Root Mean Square}\nomeqref {0}\nompageref{g}
+\nomgroup{G}
+  \item [{$\alpha $}]\begingroup \nomdescr {Angle of attack}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}\nompageref{g}
+  \item [{ $\alpha _b$}]\begingroup \nomdescr {Blade angle of attack, $\alpha _b = \theta _b - \phi _b$}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}\nompageref{g}
+  \item [{$\beta $}]\begingroup \nomdescr {Sideslip angle}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}\nompageref{g}
+  \item [{$\mu $}]\begingroup \nomdescr {Dynamic viscosity}\Units {$[\mathrm {N\cdot s/m^2}]$}\nomeqref {0}\nompageref{g}
+  \item [{$\nu $}]\begingroup \nomdescr {Kinematic viscosity}\Units {$[\mathrm {m^2/s}]$}\nomeqref {0}\nompageref{g}
+  \item [{$\phi _b$}]\begingroup \nomdescr {Blade inflow angle}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}\nompageref{g}
+  \item [{$\rho $}]\begingroup \nomdescr {Density}\Units {$[\mathrm {kg/m^3]}$}\nomeqref {0}\nompageref{g}
+  \item [{ $\theta _b$}]\begingroup \nomdescr {Blade pitch angle}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}\nompageref{g}
+\nomgroup{R}
+  \item [{$\bar {c}$}]\begingroup \nomdescr {Reference chord}\Units {$[\mathrm {m}]$}\nomeqref {0}\nompageref{g}
+  \item [{$C_D$}]\begingroup \nomdescr {Drag coefficient}\Units {$[-]$}\nomeqref {0}\nompageref{g}
+  \item [{$C_L$}]\begingroup \nomdescr {Lift coefficient}\Units {$[-]$}\nomeqref {0}\nompageref{g}
+  \item [{M}]\begingroup \nomdescr {Mach Number}\Units {$[-]$}\nomeqref {0}\nompageref{g}
+  \item [{$q_\infty $}]\begingroup \nomdescr {Dynamic pressure}\Units {$[\mathrm {kg\cdot m^{-1} s^{-2}}]$}\nomeqref {0}\nompageref{g}
+  \item [{Re}]\begingroup \nomdescr {Reynolds Number}\Units {$[-]$}\nomeqref {0}\nompageref{g}
+  \item [{$V$}]\begingroup \nomdescr {Airspeed}\Units {$[\mathrm {m/s}]$}\nomeqref {0}\nompageref{g}
+  \item [{$V$}]\begingroup \nomdescr {Airspeed}\Units {$[\mathrm {m/s}]$}\nomeqref {0}\nompageref{g}
+  \item [{ $V_{b}$}]\begingroup \nomdescr {Blade local total velocity, $V_{b} = \sqrt {V_{b,ax}^2 + V_{b,tg}^2}$}\Units {$[\mathrm {m/s}]$}\nomeqref {0}\nompageref{g}
+  \item [{ $V_{b,ax}$}]\begingroup \nomdescr {Axial velocity at the blade}\Units {$[\mathrm {m/s}]$}\nomeqref {0}\nompageref{g}
+  \item [{ $V_{b,tg}$}]\begingroup \nomdescr {Tangential velocity at the blade}\Units {$[\mathrm {m/s}]$}\nomeqref {0}\nompageref{g}
+
+\end{thenomenclature}

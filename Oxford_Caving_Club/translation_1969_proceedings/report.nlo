@@ -1,0 +1,28 @@
+\nomenclatureentry{AAftisFTIS@[{FTIS}]\begingroup \nomdef {Flight Test Instrumentation System}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAolsOLS@[{OLS}]\begingroup \nomdef {Ordinary Least Squares}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAfcsFCS@[{FCS}]\begingroup \nomdef {Flight Control System}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAafcsAFCS@[{AFCS}]\begingroup \nomdef {Automatic Flight Control System}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAcfdCFD@[{CFD}]\begingroup \nomdef {Computational Fluid Dynamics}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAblueBLUE@[{BLUE}]\begingroup \nomdef {Best Linear Unbiased Estimator}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAmseMSE@[{MSE}]\begingroup \nomdef {Minimum Square Error}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAtseRMS@[{RMS}]\begingroup \nomdef {Root Mean Square}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{AAgpsGPS@[{GPS}]\begingroup \nomdef {Global Positioning System}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGrho$\rho $@[{$\rho $}]\begingroup \nomdescr {Density}\Units {$[\mathrm {kg/m^3]}$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGnu$\nu $@[{$\nu $}]\begingroup \nomdescr {Kinematic viscosity}\Units {$[\mathrm {m^2/s}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGmu$\mu $@[{$\mu $}]\begingroup \nomdescr {Dynamic viscosity}\Units {$[\mathrm {N\cdot s/m^2}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGal$\alpha $@[{$\alpha $}]\begingroup \nomdescr {Angle of attack}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGbe$\beta $@[{$\beta $}]\begingroup \nomdescr {Sideslip angle}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRq$q_\infty $@[{$q_\infty $}]\begingroup \nomdescr {Dynamic pressure}\Units {$[\mathrm {kg\cdot m^{-1} s^{-2}}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRv$V$@[{$V$}]\begingroup \nomdescr {Airspeed}\Units {$[\mathrm {m/s}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRc$\bar {c}$@[{$\bar {c}$}]\begingroup \nomdescr {Reference chord}\Units {$[\mathrm {m}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRreRe@[{Re}]\begingroup \nomdescr {Reynolds Number}\Units {$[-]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRmaM@[{M}]\begingroup \nomdescr {Mach Number}\Units {$[-]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRcd$C_D$@[{$C_D$}]\begingroup \nomdescr {Drag coefficient}\Units {$[-]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRcl$C_L$@[{$C_L$}]\begingroup \nomdescr {Lift coefficient}\Units {$[-]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGphb$\phi _b$@[{$\phi _b$}]\begingroup \nomdescr {Blade inflow angle}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGthb $\theta _b$@[{ $\theta _b$}]\begingroup \nomdescr {Blade pitch angle}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{GGalb $\alpha _b$@[{ $\alpha _b$}]\begingroup \nomdescr {Blade angle of attack, $\alpha _b = \theta _b - \phi _b$}\Units {$[\mathrm {rad,\degree }]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRV$V$@[{$V$}]\begingroup \nomdescr {Airspeed}\Units {$[\mathrm {m/s}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRVba $V_{b,ax}$@[{ $V_{b,ax}$}]\begingroup \nomdescr {Axial velocity at the blade}\Units {$[\mathrm {m/s}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRVbt $V_{b,tg}$@[{ $V_{b,tg}$}]\begingroup \nomdescr {Tangential velocity at the blade}\Units {$[\mathrm {m/s}]$}\nomeqref {0}|nompageref}{e}
+\nomenclatureentry{RRVb $V_{b}$@[{ $V_{b}$}]\begingroup \nomdescr {Blade local total velocity, $V_{b} = \sqrt {V_{b,ax}^2 + V_{b,tg}^2}$}\Units {$[\mathrm {m/s}]$}\nomeqref {0}|nompageref}{e}

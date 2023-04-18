@@ -1,0 +1,15 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "cover.xdv" "cover.pdf" "cover" 0
+  "cover.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "cover.pdf"
+["xelatex"] 1620023539 "cover.tex" "cover.xdv" "cover" 1620023539
+  "/etc/texmf/web2c/texmf.cnf" 1573069162 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1612126495 2478016 1f5c2270d6f157e1d560ab65a24c12a3 ""
+  "cover.aux" 1613085187 8 a94a2480d3289e625eea47cd1b285758 ""
+  "cover.tex" 1620023539 3061 7b4928cdfac32e61b739c1901e5e765d ""
+  (generated)
+  "cover.xdv"
+  "cover.log"

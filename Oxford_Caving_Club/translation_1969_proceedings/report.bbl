@@ -1,0 +1,432 @@
+\begin{thebibliography}{10}
+
+\bibitem{VanArnhem2020}
+N.~van Arnhem, R.~de~Vries, T.~Sinnige, R.~Vos, G.~Eitelberg, and L.~L.
+  Veldhuis, ``{Engineering method to estimate the blade loading of propellers
+  in nonuniform flow},'' {\em AIAA Journal}, vol.~58, no.~12, pp.~5332--5346,
+  2020.
+
+\bibitem{Veldhuis_PhD}
+L.~Veldhuis, {\em {Propeller Wing Aerodynamic Interference}}.
+\newblock Phd thesis, Delft University of Technology, 2005.
+
+\bibitem{Sinnige_PhD}
+T.~Sinnige, {\em {Aerodynamic and Aeroacoustic Interaction Effects for
+  Tip-Mounted Propellers - An Experimental Study}}.
+\newblock Phd thesis, Delft University of Technology, 2018.
+
+\bibitem{Erhard2021}
+R.~M. Erhard, M.~A. Clarke, and J.~J. Alonso, ``{A low-cost aero-propulsive
+  analysis of distributed electric propulsion aircraft},'' {\em AIAA Scitech
+  2021 Forum}, vol.~1 PartF, no.~January, pp.~1--12, 2021.
+
+\bibitem{Prandtl1921}
+L.~Prandtl, ``{Mutual influence of wings and propeller},'' tech. rep., National
+  Advisory Committee for Aeronautics, 1921.
+
+\bibitem{Stuper1938}
+J.~Stuper, ``{Effect of Propeller Slipstream on Wing and Tail},'' Tech. Rep.
+  874, National Advisory Committee for Aeronautics, 1938.
+
+\bibitem{Johnson1991}
+R.~T. Johnson, D.~P. Witkowski, and J.~P. Sullivan, ``{Experimental Results of
+  a Propeller/Wing Interaction Study},'' {\em Journal of Aerospace}, vol.~100,
+  1991.
+
+\bibitem{Dillinger2018}
+E.~Dillinger, C.~D{\"{o}}ll, R.~Liaboeuf, C.~Toussaint, J.~Hermetz, C.~Verbeke,
+  and M.~Ridel, ``{Handling qualities of ONERA's small business concept plane
+  with distributed electric propulsion},'' {\em 31st Congress of the
+  International Council of the Aeronautical Sciences, ICAS 2018}, pp.~1--10,
+  2018.
+
+\bibitem{Sinnige2019}
+T.~Sinnige, N.~{Van Arnhem}, T.~C. Stokkermans, G.~Eitelberg, and L.~L.
+  Veldhuis, ``{Wingtip-mounted propellers: Aerodynamic analysis of interaction
+  effects and comparison with conventional layout},'' {\em Journal of
+  Aircraft}, vol.~56, no.~1, pp.~295--312, 2019.
+
+\bibitem{Obert1997}
+E.~Obert, ``{A Method for the Determination of the Effect of Propeller
+  Slipstream on the Static Longitudinal Stability and Control of Multi-Engined
+  Propeller Aircraft},'' tech. rep., Delft University of Technology, 1997.
+
+\bibitem{Ting1972}
+L.~Ting, C.~H. Liu, and G.~Kleinstein, ``{Interference of wing and
+  multipropellers},'' {\em AIAA Journal}, vol.~10, no.~7, pp.~906--914, 1972.
+
+\bibitem{Bouquet2017}
+T.~Bouquet and R.~Vos, ``{Modeling the propeller slipstream effect on lift and
+  pitching moment},'' {\em AIAA SciTech Forum - 55th AIAA Aerospace Sciences
+  Meeting}, 2017.
+
+\bibitem{Agostinelli2015}
+C.~Agostinelli, S.~Simeoney, C.~B. Allen, F.~Zhu, and A.~Rampurawala, ``{A fast
+  approach to model the effects of propeller slipstream on wing load
+  distribution},'' {\em 53rd AIAA Aerospace Sciences Meeting}, no.~March, 2015.
+
+\bibitem{Bohari2017}
+B.~Bohari, M.~Bronz, E.~Benard, Q.~Borlon, B.~Bohari, M.~Bronz, E.~Benard,
+  Q.~Borlon, and C.~Design, ``{Conceptual Design of Distributed Propeller
+  Aircraft : Linear Aerodynamic Model Verification of Propeller-Wing
+  Interaction},'' {\em 7Th European Conference for Aeronautics and Aerospace
+  Sciences}, no.~September, 2017.
+
+\bibitem{Soikkeli2020}
+J.~S. Soikkeli, {\em {Vertical Tail Reduction Through Differential Thrust}}.
+\newblock PhD thesis, Delft University of Technology, 2020.
+
+\bibitem{Marcus2018}
+E.~A. Marcus, R.~{De Vries}, A.~R. Kulkarni, and L.~L. Veldhuis, ``{Aerodynamic
+  investigation of an over-the-wing propeller for distributed propulsion},''
+  {\em AIAA Aerospace Sciences Meeting}, 2018.
+
+\bibitem{Calabretta2010}
+J.~Calabretta, {\em {A Three Dimensional Vortex Particle-Panel Code for
+  Modeling Propeller-Airframe Interaction}}.
+\newblock Msc. thesis, California Polytechnic State University, 2010.
+
+\bibitem{Alvarez2018}
+E.~J. Alvarez and A.~Ning, ``{Development of a vortex particle code for the
+  modeling of wake interaction in distributed propulsion},'' {\em 2018 Applied
+  Aerodynamics Conference}, 2018.
+
+\bibitem{Agostinelli2013}
+C.~Agostinelli, C.~Liu, C.~B. Allen, A.~Rampurawala, and G.~Ferraro,
+  ``{Propeller-flexible wing interaction using rapid computational methods},''
+  {\em 31st AIAA Applied Aerodynamics Conference}, pp.~1--13, 2013.
+
+\bibitem{VanArnhem2018}
+N.~{Van Arnhem}, T.~Sinnige, T.~C. Stokkermans, G.~Eitelberg, and L.~L.
+  Veldhuis, ``{Aerodynamic interaction effects of tip-mounted propellers
+  installed on the horizontal tailplane},'' {\em AIAA Aerospace Sciences
+  Meeting, 2018}, no.~210059, 2018.
+
+\bibitem{Rankine1865}
+W.~Rankine, ``{On the mechnical principles of the action of propellers},'' {\em
+  Transaction of the Institute of Naval Architects}, vol.~6, pp.~13--39, 1865.
+
+\bibitem{RE1889}
+R.~Froude, ``{On the part played in propulsion by difference in pressure},''
+  {\em Transaction of the Institute of Naval Architects}, vol.~30,
+  pp.~390--423, 1889.
+
+\bibitem{Theodorsen1948}
+T.~Theodorsen, {\em {Theory of Propellers - Chapters I and II}}.
+\newblock McGraw-Hill, 1948.
+
+\bibitem{DeVries2017}
+R.~de~Vries, T.~Sinnige, B.~{Della Corte}, F.~Avallone, D.~Ragni,
+  G.~Eitelbergk, and L.~L. Veldhuis, ``{Tractor propeller–pylon interaction,
+  Part I: Characterization of unsteady pylon loading},'' {\em AIAA SciTech
+  Forum - 55th AIAA Aerospace Sciences Meeting}, 2017.
+
+\bibitem{Johnston1993}
+R.~T. Johnston and J.~P. Sullivan, ``{Unsteady wing surface pressures in the
+  wake of a propeller},'' {\em Journal of Aircraft}, vol.~30, no.~5,
+  pp.~644--651, 1993.
+
+\bibitem{Samuelsson1990}
+I.~Samuelsson, ``{Experimental Investigation of Low Speed Model Propeller
+  Slipstream Aerodynamic Characteristics Including Flow Field Surveys and
+  Nacelle/Wing Static Pressure Measurements},'' 1990.
+
+\bibitem{Karkehabadi2004}
+R.~Karkehabadi, ``{Thick wings in steady and unsteady flows},'' {\em Journal of
+  Aircraft}, vol.~41, no.~4, pp.~964--967, 2004.
+
+\bibitem{Murua2012}
+J.~Murua, R.~Palacios, and J.~M.~R. Graham, ``{Applications of the unsteady
+  vortex-lattice method in aircraft aeroelasticity and flight dynamics},'' {\em
+  Progress in Aerospace Sciences}, vol.~55, pp.~46--72, 2012.
+
+\bibitem{Simpson2016}
+R.~J.~S. Simpson, ``{Unsteady aerodynamics, reduced-order modelling, and
+  predictive control in linear and nonlinear aeroelasticity with arbitrary
+  kinematics},'' no.~August, 2016.
+
+\bibitem{Katz2010}
+J.~Katz and A.~Plotkin, {\em {Low-Speed Aerodynamics}}.
+\newblock Cambridge University Press, 2nd~ed., 2010.
+
+\bibitem{Miranda1976}
+L.~R. Miranda, ``{Extended Applications of the Vortex Lattice Method},''
+  no.~19760021078, 1976.
+
+\bibitem{VanDam2002}
+C.~P. {Van Dam}, ``{The aerodynamic design of multi-element high-lift systems
+  for transport airplanes},'' {\em Progress in Aerospace Sciences}, vol.~38,
+  no.~2, pp.~101--144, 2002.
+
+\bibitem{Hasier_2019}
+H.~Goitia and R.~Llamas, ``{Nonlinear vortex lattice method for stall
+  prediction},'' {\em MATEC Web of Conferences}, vol.~304, p.~02006, 2019.
+
+\bibitem{Parenteau2018}
+M.~Parenteau, {\'{E}}.~Laurendeau, and K.~Sermeus, ``{VLM coupled with 2.5d
+  RANS sectional data for high-lift design},'' {\em AIAA Aerospace Sciences
+  Meeting, 2018}, no.~210059, 2018.
+
+\bibitem{Proulx-Cabana}
+V.~Proulx-Cabana and E.~Laurendeau, ``{Towards Non-Linear Unsteady Vortex
+  Lattice Method (NL-UVLM) for rotary-wing aerodynamics},''
+
+\bibitem{Parenteau2017}
+M.~Parenteau, F.~Plante, E.~Laurendeau, and M.~Costes, ``{Unsteady coupling
+  algorithm for lifting-line methods},'' {\em AIAA SciTech Forum - 55th AIAA
+  Aerospace Sciences Meeting}, no.~January 2018, 2017.
+
+\bibitem{PerezGordillo2019}
+A.~M. {P{\'{e}}rez Gordillo}, J.~S.~V. Santos, O.~D. {Lopez Mejia}, L.~J.~S.
+  Collazos, and J.~A. Escobar, ``{Numerical and experimental estimation of the
+  efficiency of a quadcopter rotor operating at hover},'' {\em Energies},
+  vol.~12, no.~2, pp.~1--19, 2019.
+
+\bibitem{Rezaei2020}
+A.~S. Rezaei, C.~R. {Dos Santos}, and H.~Taha, ``{Viscous extension of the
+  unsteady vortex lattice method},'' {\em AIAA Scitech 2020 Forum}, vol.~1
+  PartF, no.~January, 2020.
+
+\bibitem{SugarGabor2016}
+O.~{Şugar Gabor}, A.~Koreanschi, and R.~M. Botez, ``{A new non-linear vortex
+  lattice method: Applications to wing aerodynamic optimizations},'' {\em
+  Chinese Journal of Aeronautics}, vol.~29, no.~5, pp.~1178--1195, 2016.
+
+\bibitem{DosSantos2018}
+C.~R. {Dos Santos} and F.~D. Marques, ``{Lift prediction including stall, using
+  vortex lattice method with Kirchhoff-based correction},'' {\em Journal of
+  Aircraft}, vol.~55, no.~2, pp.~887--891, 2018.
+
+\bibitem{Metcalfe1985}
+M.~Metcalfe, ``{On the Modelling of a Fully-Relaxed Propeller Slipstream},''
+  {\em AIAA/SAE/ASME/ASEE 21st Joint Propulsion Conference}, 1985.
+
+\bibitem{Leng2019}
+Y.~Leng, M.~Bronz, T.~Jardin, and J.-m. Moschetta, ``{Comparisons of Different
+  Propeller Wake Models for a Propeller-Wing Combination},'' pp.~1--15, 2019.
+
+\bibitem{Bouquet2017a}
+T.~Bouquet and R.~Vos, ``{Modeling the propeller slipstream effect on lift and
+  pitching moment},'' {\em AIAA SciTech Forum - 55th AIAA Aerospace Sciences
+  Meeting}, no.~January, pp.~1--15, 2017.
+
+\bibitem{McCormick1994}
+B.~W. McCormick, {\em {Aerodynamics, Aeronautics and Flight Mechanics}}.
+\newblock John Wiley \& Sons, 1994.
+
+\bibitem{Conway1995}
+J.~T. Conway, ``{Analytical solutions for the actuator disk with variable
+  radial distribution of load},'' {\em Journal of Fluid Mechanics}, vol.~297,
+  pp.~327--355, 1995.
+
+\bibitem{Chandrasekaran1985}
+B.~Chandrasekaran, ``{Method for Calculating Effects of a Profan on Aircraft
+  Aerodynamics At Subsonic Speeds.},'' tech. rep., NASA, 1985.
+
+\bibitem{McCormick1967}
+B.~W. McCormick, {\em {Aerodynamics of V/STOL Flight}}.
+\newblock Academic Press, 1967.
+
+\bibitem{Miranda1986}
+L.~R. Miranda and J.~E. Brennan, ``{Aerodynamic Effects of Wingtip-Mounted
+  Propellers and Turbines.},'' {\em AIAA Paper}, pp.~221--228, 1986.
+
+\bibitem{Clark1990}
+R.~W. Clark and W.~Valrezo, ``{Subsonic Calculation of Propeller/Wing
+  Interference},'' in {\em 28th Aerospace Sciences Meeting}, 1990.
+
+\bibitem{Alba2018}
+C.~Alba, A.~Elham, B.~J. German, and L.~L. Veldhuis, ``{A surrogate-based
+  multi-disciplinary design optimization framework modeling wing–propeller
+  interaction},'' {\em Aerospace Science and Technology}, vol.~78,
+  pp.~721--733, 2018.
+
+\bibitem{Veldhuis2004}
+L.~L.~M. Veldhuis, ``{Review of Propeller-Wing Aerodynamic Interference},'' in
+  {\em 24th International Congress of the Aeronautical Sciences}, 2004.
+
+\bibitem{deYoung1965}
+J.~{De Young}, ``{Propeller at high incidence},'' {\em Journal of Aircraft},
+  vol.~2, no.~3, pp.~241--250, 1965.
+
+\bibitem{Epema2017}
+H.~K. Epema, {\em {Wing Optimisation for Tractor Propeller Configurations}}.
+\newblock Msc. thesis, Delft University of Technology, 2017.
+
+\bibitem{Hunsaker2007}
+D.~F. Hunsaker, ``{A numerical blade element approach to estimating propeller
+  flowfields},'' {\em Collection of Technical Papers - 45th AIAA Aerospace
+  Sciences Meeting}, vol.~7, pp.~4583--4589, 2007.
+
+\bibitem{Phillips2004}
+W.~F. Phillips, {\em {Mechanics of flight}}.
+\newblock John Wiley \& Sons, 2004.
+
+\bibitem{Phillips2000}
+W.~F. Phillips and D.~O. Snyder, ``{Modern adaptation of Prandtl's classic
+  lifting-line theory},'' {\em Journal of Aircraft}, vol.~37, no.~4,
+  pp.~662--670, 2000.
+
+\bibitem{Rwigema2010}
+M.~K. Rwigema, ``{Propeller blade element momentum theory with vortex wake
+  deflection},'' {\em 27th Congress of the International Council of the
+  Aeronautical Sciences 2010, ICAS 2010}, vol.~1, pp.~727--735, 2010.
+
+\bibitem{Leng2020}
+Y.~Leng, M.~Bronz, T.~Jardin, and J.~M. Moschetta, ``{Slipstream Deformation of
+  a Propeller-Wing Combination Applied for Convertible UAVs in Hover
+  Condition},'' {\em Unmanned Systems}, vol.~8, no.~4, pp.~295--308, 2020.
+
+\bibitem{Khan2013}
+W.~Khan, R.~Caverly, and M.~Nahon, ``{Propeller slipstream model for small
+  unmanned aerial vehicles},'' {\em AIAA Modeling and Simulation Technologies
+  (MST) Conference}, no.~August, 2013.
+
+\bibitem{Goates2018}
+J.~T. Goates, ``{Development of an Improved Low-Order Model for Propeller-Wing
+  Interactions},'' 2018.
+
+\bibitem{Patterson2014}
+M.~D. Patterson, M.~J. Daskilewicz, and B.~J. German, ``{Conceptual design of
+  electric aircraft with distributed propellers: Multidisciplinary analysis
+  needs and aerodynamic modeling development},'' {\em 52nd Aerospace Sciences
+  Meeting}, no.~January, pp.~1--18, 2014.
+
+\bibitem{Bramesfeld2008}
+G.~Bramesfeld and M.~D. Maughmer, ``{Relaxed-wake vortex-lattice method using
+  distributed vorticity elements},'' {\em Journal of Aircraft}, vol.~45, no.~2,
+  pp.~560--568, 2008.
+
+\bibitem{Cole2016}
+J.~A. Cole, {\em {A Higher Order Free Wake Method for Aerodynamic Performance
+  Prediction of Propeller-Wing Systems}}.
+\newblock Phd thesis, Pennsylvania State University, 2016.
+
+\bibitem{Cole2019}
+J.~A. Cole, M.~D. Maughmer, M.~Kinzel, and G.~Bramesfeld, ``{Higher-order
+  free-wake method for propeller-wing systems},'' {\em Journal of Aircraft},
+  vol.~56, no.~1, pp.~150--165, 2019.
+
+\bibitem{Marretta1997}
+R.~M. Marretta, ``{Different wings flowfields interaction on the wing-propeller
+  coupling},'' {\em Journal of Aircraft}, vol.~34, no.~6, pp.~740--747, 1997.
+
+\bibitem{Qin1998}
+E.~Qin, G.~Yang, and F.~Li, ``{Numerical analysis of the interference effect of
+  propeller slipstream on aircraft flowfield},'' {\em Journal of Aircraft},
+  vol.~35, no.~1, pp.~84--90, 1998.
+
+\bibitem{Stone2008}
+R.~H. Stone, ``{Aerodynamic modeling of the wing-propeller interaction for a
+  tail-sitter unmanned air vehicle},'' {\em Journal of Aircraft}, vol.~45,
+  no.~1, pp.~198--210, 2008.
+
+\bibitem{Winckelmans1993}
+G.~S. Winckelmans and A.~Leonard, ``{Contributions to vortex particle methods
+  for the computation of three-dimensional incompressible unsteady flows},''
+  1993.
+
+\bibitem{Winckelmans_PhD}
+G.~S. Winckelmans, {\em {Topics in Vortex Methods for the Computation of
+  Three-and Two-dimensional Incompressible Unsteady Flows}}.
+\newblock PhD thesis, California Institute of Technology, 1989.
+
+\bibitem{Teixeira2017}
+P.~C. Teixeira and C.~E. Cesnik, ``{Inclusion of propeller effects on
+  aeroelastic behavior of very flexible aircraft},'' {\em 17th International
+  Forum on Aeroelasticity and Structural Dynamics, IFASD 2017}, vol.~2017-June,
+  no.~June, pp.~1--18, 2017.
+
+\bibitem{Voutsinas2006}
+S.~G. Voutsinas, ``{Vortex methods in aeronautics: How to make things work},''
+  {\em International Journal of Computational Fluid Dynamics}, vol.~20, no.~1,
+  pp.~3--18, 2006.
+
+\bibitem{He2009}
+C.~He and J.~Zhao, ``{Modeling rotor wake dynamics with viscous vortex particle
+  method},'' {\em AIAA Journal}, vol.~47, no.~4, pp.~902--915, 2009.
+
+\bibitem{Marinus2010}
+B.~Marinus, M.~Lino, and W.~Bosschaerts, ``{Propeller installation effects on a
+  semi-span wing},'' {\em International Review of Aerospace Engineering},
+  vol.~3, no.~3, pp.~144--151, 2010.
+
+\bibitem{Gur2008}
+O.~Gur and A.~Rosen, ``{Comparison between blade-element models of
+  propellers},'' {\em Aeronautical Journal}, vol.~112, no.~1138, pp.~689--704,
+  2008.
+
+\bibitem{teoria_helicopteros}
+{\'{A}}.~Cuerva, J.~L. Espino, O.~Lopez, J.~Meseguer, and A.~Sanz, {\em
+  {Teor{\'{i}}a de los Helic{\'{o}}pteros}}.
+\newblock Garceta Grupo Editorial, 2009.
+
+\bibitem{Leishman2006}
+J.~G. Leishman, ``{Principles of Helicopter Aerodynamics},'' 2006.
+
+\bibitem{Silva2013}
+C.~Tavares-Silva and M.~Vicente-Donadon, ``{Unsteady blade element-momentum
+  method including returning wake effects},'' {\em Journal of Aerospace
+  Technology and Management}, vol.~5, no.~1, pp.~27--42, 2013.
+
+\bibitem{Du1998}
+Z.~Du and M.~S. Selig, ``{A 3-D stall-delay model for horizontal axis wind
+  turbine performance prediction},'' {\em 1998 ASME Wind Energy Symposium},
+  pp.~9--19, 1998.
+
+\bibitem{Viterna1982}
+L.~A. Viterna and D.~C. Janetzke, ``{Theoretical and experimental power from
+  large horizontal-axis wind turbines.},'' no.~October 1982, 1982.
+
+\bibitem{Goldstein1929}
+S.~Goldstein, ``{On the Vortex Theory of the Screw Propeller},'' {\em
+  Proceedings of the Royal Society of London, Series A}, vol.~123,
+  pp.~440--465, 1929.
+
+\bibitem{Wald2006}
+Q.~R. Wald, ``{The aerodynamics of propellers},'' {\em Progress in Aerospace
+  Sciences}, vol.~42, no.~2, pp.~85--128, 2006.
+
+\bibitem{Ribner1943}
+H.~S. Ribner, ``{Propellers in yaw},'' tech. rep., NACA, 1943.
+
+\bibitem{Ribner1944}
+H.~Ribner, ``{Notes on the Propeller and Slipstream in relation to
+  Stability},'' {\em NACA Wartime Report L-25}, 1944.
+
+\bibitem{Ribner1945}
+H.~S. Ribner, ``{Formulas for propellers in Yaw and charts of the side-force
+  derivative},'' {\em NACA Report No.819}, no.~May, pp.~1--12, 1945.
+
+\bibitem{VanderVaart1983}
+J.~C. van~der Vaart and H.~Muhammed, ``{Static longitudinal stability and
+  control chracteristics of the Fokker F27 'Friendship' calculated by simple
+  handbook methods},'' 1983.
+
+\bibitem{Marretta1999}
+R.~M. Marretta, G.~Davi, A.~Milazzo, and G.~Lombardi, ``{Wing pitching and
+  loading with propeller interference},'' {\em Journal of Aircraft}, vol.~36,
+  no.~2, pp.~468--471, 1999.
+
+\bibitem{NguyenVan2018}
+E.~{Nguyen Van}, P.~Troillard, J.~J{\'{e}}z{\'{e}}gou, D.~Alazard, P.~Pastor,
+  and C.~D{\"{o}}ll, ``{Reduction of Vertical Tail Using Differential Thrust :
+  Influence on Flight Control and Certification},'' {\em Advanced Aircraft
+  Efficiency in a Global Air Transport System (AEGATS'18)}, 2018.
+
+\bibitem{NguyenVan2020}
+E.~{Nguyen Van}, D.~Alazard, C.~D{\"{o}}ll, and P.~Pastor, ``{Co-design of
+  aircraft vertical tail and control laws with distributed electric propulsion
+  and flight envelop constraints},'' {\em CEAS Aeronautical Journal}, no.~1,
+  2020.
+
+\bibitem{Muhammad1995}
+H.~Muhammad, ``{Identification of Turboprop Thrust from Flight Test Data},''
+  1995.
+
+\bibitem{Takarics2021}
+B.~Takarics, R.~D. Mocsanyi, B.~Vanek, D.~Sziroczak, and D.~Rohacs,
+  ``{Aerodynamic and LPV Modeling of a Distributed Propulsion Morphing Wing
+  Aircraft},'' 2021.
+
+\end{thebibliography}

@@ -1,0 +1,716 @@
+\documentclass[11pt, a4paper, twoside]{memoir}
+
+% Load packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}   
+\usepackage{amssymb}
+\usepackage[cm]{fullpage}
+\usepackage{graphicx}
+\usepackage[pdfpagelabels]{hyperref}
+\usepackage{textcomp}	
+\usepackage{gensymb}
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{multirow}
+%\usepackage[style=super, sort=use, topc, nonumberlist]{glossaries}
+\usepackage[top=1.2in, bottom=1in, right=1.2in, left=1in, headheight=14pt,headsep=1cm]{geometry}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+%\usepackage[titletoc,title,page,toc]{appendix}
+\usepackage{bm}
+\usepackage{letltxmacro}
+\usepackage{nomencl,etoolbox,ragged2e,mathtools}
+%\usepackage{bibtex}
+%\usepackage[numbers]{natbib}% what is this for
+\usepackage{rotating}
+\usepackage{longtable,tabularx}
+
+% Try to remove this, I don't know why we suddenly need it! Problems with Latex in Ubuntu 20? 
+\makeatletter\AtBeginDocument{\let\@elt\relax}\makeatother
+
+% Fixed width centered columns for tables
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+% Modified figure and table environments to add them in multicols
+\makeatletter
+\newenvironment{tablehere}
+  {\def\@captype{table}}
+  {}
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+% Captions management
+%\usepackage{caption}
+%\usepackage{subcaption} % Change this https://tex.stackexchange.com/questions/116807/i-get-an-error-when-using-subfigure-with-memoir
+ 
+% Nomenclature
+%\usepackage[intoc,noprefix]{nomencl}
+%\usepackage{ifthen}
+%\makenomenclature
+
+% Headers and footers
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\newcommand{\headruledwidth}{0.4pt}
+%\lhead{Aircraft Aerodynamics}	% Left header	
+%\rhead{\leftmark}			    % Right header (\leftmark for chapter)
+%\setlength\parindent{0pt}
+
+\usepackage{paracol}
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\AtBeginEnvironment{paracol}{\setlength{\parindent}{0pt}}
+
+% User-defined commands
+\input{inputs/user_commands.tex}
+
+% TIKZ settings
+\input{inputs/tikz.tex}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+%\newcommand{\check}{\ding{51}}%
+\newcommand{\nocheck}{\ding{55}}%
+
+%==============================================================================
+%==============================================================================
+
+\begin{document}
+
+% Titlepage
+\pagenumbering{alph}
+\phantomsection\pdfbookmark{Title page}{titlepage} % Bookmark in the PDF viewer for the titlepage
+\input{inputs/cover.tex} 
+
+% List of todos
+\clearpage
+\thispagestyle{empty}
+\listoftodos
+\phantomsection\pdfbookmark{TODO LIST}{TODO LIST} % Bookmark in the PDF viewer for the titlepage
+\clearpage
+
+
+% Table of Contents
+\clearpage
+%\phantomsection\pdfbookmark{Contents}{contents} % Bookmark in the PDF viewer for the 
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\tableofcontents
+
+% List of figures
+\clearpage
+\listoffigures
+%\addcontentsline{toc}{chapter}{List of Figures}
+
+% List of tables
+\clearpage
+\listoftables
+%\addcontentsline{toc}{chapter}{List of Tables}
+
+% Nomenclature
+\clearpage
+%\input{inputs/nomenclature.tex}
+%==============================================================================
+% 								DOCUMENT 
+%==============================================================================
+
+% Set numbering to arabic for the rest of the document
+\pagenumbering{arabic}
+%\setcounter{page}{0}
+
+\chapter{Introduction - Area map}
+
+Oxford University Cave Club has been exploring caves in the Cantabrian Mountains since 1961. Interest in the El Mazuco area dates from 1968, when a three-man expedition searched for a new and interesting area. The first major expedition to the area took place in the late summer of 1969. This was hindered by heavy rain, preventing full exploration of the wet caves, but a number of caves were discovered and partially explored. The Pozo de Fresno, major discovery of the expedition, was fully explored and surveyed; it is now being opened as a show cave by the local council. The reports of the 1968 and 1969 expeditions were published in the Proceedings of the O.U. Cave Club No. 5 (Jan. 1970) Proc OUCC 5.(price 25p).
+
+To avoid the rain, the 1970 expedition took place earlier in the summer, leaving England at the end of June. For most of the time the weather was reasonably dry, but we did also observe some spectacular floods. The flood danger in the caves of this area cannot be exaggerated; even in summer thunderstorms are common. The caves fill quickly and remain flooded for days, sometimes weeks. Even in dry weather the caves carry appreciable streams, and water is the main hazard and exposure in the Cueva Bolugo has claimed three victims temporarily. Our 1969 expedition had given us sufficient experience of these caves in flood and a full and successful programme of exploration was carried out without untoward incident. The only casualty was one new Ulstron rope, badly chafed when Boriza flooded.
+
+The various members of the expedition have all contributed as much to the writing of this report as they did in the field, and their assistance is acknowledged in the uncredited sections as well as those credited to individual names. The final form of the report, though, has been my responsibility, and I accept full liability for any errors or omissions.
+
+Guy Cox, Botany Dept., University of Oxford. (Received 21st Jan. 1971).
+
+
+\chapter{Expedition Logistics}
+
+
+Travel: Two cars, Geoff Dare's Morris Minor Traveller and Jon Davies' Morris Oxford, were taken and these provided transport for all ten expedition members in Spain. For the journey out, though, Geoff's Traveller carried only Guy Cox and himself, the back being filled, and the roof-rack piled high, with expedition luggage and tackle. Jon's Oxford carried four men: the owner, Andy Brooks, Dave Peace and Peter Urben, with only their personal luggage. The cars left England on 26th June, 1970. Other members flew out.
+
+Living Arrangements: We camped in a small walled hayfield 400m from El Mazuco, near the Pozo de Fresno, with a nearby spring providing water. We had negotiated to pay 1,000 ptas. (f6) to the owner of the field (the village headman), though we had difficulty in making him accept it. Basic necessities of life could be Obtained from the shop-cum-bar in the village so that it was only occasionally necessary to visit the market towns of Llanes and Posada. We took very little food with us - essentially only luxury items such as tea and coffee, which are expensive in Spain, and emergency supplies. All other food was bought independently by the members, who formed ad hoc cooking pools. We have found that this system has many advantages; it is simpler to organise, cheaper (if one includes transport costs) and usually provides a much better and more balanced diet.
+
+The Expedition: Geoff Dare and Guy Cox were the first to arrive in Llanes, having made the journey from Oxford in about 48 hours. The first night was spent in the Barro campsite, and the following morning they set off to El Mazuco to establish a camp for the expedition. Thanks to the kindness of the villagers, an excellent site was soon arranged, and the car was unloaded.. However, the crew of Jon Davies' Morris Oxford, which had limped to Llanes on two of its four cylinders, did find them and after a concerted pushing effort proceeded in a slow convoy up the mountain road to El Mazuco.
+
+The following day John Forder was found, and by the time the remaining three members arrived by taxi two days later the regular pattern of expedition work had been established. For the first fortnight, we had only one car available, and it was fortunate that most of the caves were within walking distance. Most days at least two caving trips, each involving two or three people, took place, while another party might walk over the mountainside, looking for new caves or studying the geology. Sometimes one of the locals would offer to lead us to a new cave - this usually meant an early start and a long hard walk, but the caves discovered were often worthwhile. NiFe-cell charging was by our own charger installed in the only local garage to have 220v. AC.)
+
+After two weeks the weather broke in a series of thunderstorms, restricting our caving activities, but the villagers, impressed by Jon's feats of automobile engineering, invited him to repair the generator in the Cueva de Bolugo which provided the village with electric light. This had been out of action for some weeks, and when Jon's efforts were successful it was the signal for a massive celebration. For a long afternoon, cavers forgot about flooded pots and villagers about sodden hayfields.
+
+The pattern of expedition work returned to normal as first hangovers and then floods subsided. John Forder returned to England, and a week later the 'Oxford, with its four passengers, set off. The remaining five men spent three days tying up some of the loose ends of exploration and surveying, and then went, by coach and car, to Castro Urdiales. There a day was spent renewing acquaintance with old friends and familiar caves, and a new chamber was discovered at the end of the Cueva de las Peines, unfortunately not providing a bypass to the terminal choke.
+
+
+\section*{Personnel}
+
+J. Davies (Leader)
+J. Forder
+G. C. Cox (Organising Secretary)
+D. A. Peace
+G. J. M. Dare (Treasurer)
+J. G. Sheppard
+A.G. Brooks (Geologist)
+P. G. Urben
+F.E.T. Sanders (Geomorphologist \& Surveyor)
+Dr. P. B. Tinker (Home Agent)
+N. Boulton
+
+
+\chapter{Geology}
+\textbf{By A.G. Brooks}
+
+(a) Introduction: This report and the accompanying map (Fig.3) describe the structure and geology of the northern slopes of the Sierra de Cuera. They are based on observations made during the speleological expeditions of 1969 and 1970, when the primary interest was cave exploration. Little specifically geological fieldwork was carried out, and certain areas had to be left unvisited. However, the following description indicates the present extent of work, and should be of use to the speleologist interested in this region.
+
+All the rocks are sedimentary, and have been subjected to considerable folding and faulting. No evidence of inverted strata was observed, and it may be assumed that the older rocks always underlie the younger.
+
+At the lowest level are Devonian sandstones. The base of this sequence has not been seen, but the upper levels consist of 100m or more of white quartzite, overlain by a transitional series of sandstones, shales and limestones not inure than 50m in total thickness.
+
+Above these insoluble beds lies the Carboniferous Limestone, the rock in which all the caves and associated features occur. It is a pure limestone, coarsely recrystallised, dark grey when fresh but weathering to white, occasionally with small pockets of chert or bands of shale, and iron- staining, dolomitisation, and pseudo-brecciation associated with faults.
+
+In the east of the region, another insoluble sequence overlies the limestone. This is very poorly exposed and was mostly mapped from a distance: it is, however, thought to be the Cantabrian flysch which is known to outcrop immediately to the east.
+
+(b) Structure: The major syncline forming the main limestone massif from Peña Blanca through Turbina to Liño cannot be directly observed. It is indicated, not only by the outcrops of underlying Devonian sandstone to north and south, but by very impressive joint-and-cleavage-fans converging upwards and visible at numerous points on the high plateau. This jointing completely obliterates any trace of bedding near the axial plane of the fold, and the joint-surface itself is seen to be distorted near Cueva sin Nombre, due to a secondary flexure.
+
+Further to the north, the Devonian sandstone reaches the surface again. In the east of the region, near La Borbolla, its outcrop is continuous, and associated with an antiform. In the El Mazuco area, however, the outcrop is broken into a number of triangular or rectangular blocks, usually bounded by faults on at least two sides. The antiform appears to have passed through the sandstone outcrop south of Cortines, and is represented in the large, gentle anticline seen in the limestone by the roadside south of Mere.
+
+The Cretaceous flysch which overlies the limestone and forms the catchment area for the cave at Purón occurs only in the east of the region. Its outcrop is bounded by straight margins parallel to other structural trends, and it is at present thought that it is restricted to a faulted trough.
+
+The northern part of the map consists of a broad coastal plain, some 50m above sea level. Numerous outliers of solid rock stand above the plain, and are in every case composed of limestone.
+
+The faulted blocks in the west of the region have, in general, been tilted to the north-west. Although a discussion on tectonics would be both out of place and based on insufficient information, it is worth pointing out that just such a pattern could be produced by a minimum principal stress trending north-north-west, and with a small vertical component. The east-west faults run parallel to the structural trend of the massif, and it is here suggested that the east-west trends of folding and jointing were established at an early period, and the plane of weakness thus developed magnified into one of a conjugate set of fault-planes formed by a post-Cretaceous stress field.
+
+(c) The Map: The Arroyo Bolugas cave system lies in a particularly complex faulted area. At the moment, the only cave in which a fault has been mapped underground is Laneveru (see survey Fig. 16). A fault can be seen on the surface in the Bolugo depression, and the limestone in the Nacimiento de Cortines is less pure than in the other caves, possibly indicating close proximity to a fault. However, until further correlation of faults with cave passages can be carried out, the situation is being left open on the map.
+
+The other particularly doubtful area is the western boundary of the northern limb of the flysch outcrop, which has not been visited by the author. Other conjectured faults which have not been marked are the southern margins of the sandstone outcrops of the Arroyo del Pasado and Green Sink.
+
+
+
+GEOLOGY REFERENCES
+E. Hernandez-Pacheco \& F. Hernandez-Pacheco 1935. Observaciones respecto a estratigrafia y tectonica de La Cordillera Cantabro asturiana. Bol. R. Soc. Esp. Hist. Nat. XXXV, 487-499.
+
+Bertrand, L., \& Mengaud, L., 1912. Sur La structure des Pyrenees Cantabriques entre Santander et Llanes et leurs relations probables avec les Pyrenees. Bull. Soc. Geol. France (Ser. 4) XII. 504-518.
+
+
+
+\chapter{Hidrology}
+\textbf{By F.E. Sanders Valley Profile}
+
+(a) Karst Drainage at the Western End of the Sierra de Cuera. The study area is that portion of the Sierra de Cuera delineated by the valley of the Rio de las Cabras (synonym, Rio Bedon) to the west and the valley of the Rio Purón to the east (Figs. 1 \& 3). In common with much of the Cantabrian coast, the Llanes region shows three well-defined elements, the coastal zone, the coastal range of the Sierra de Cuera, and a longitudinal prelittoral valley, that of the Casano-Cares which divides the Sierra de Cuera from the main massifs of the Picos de Europa to the south (Sole Sabaris, 1952).
+
+Eustatic lowering of sea level during the Pleistocene has led to the formation of several levels of coastal terraces on the Atlantic coasts of France and the Iberian Peninsula, and around the shores of the Mediterranean. The chronology of these terraces has been discussed by Zeuner, (1959) and Fairchild (1961). The terraces are a prominent feature of the coast of Asturias, particularly so in the Llanes region. They are known locally as 'rasas'. Gomez de Llareña and Royo (1927) recognised six levels, some with beach deposits, at elevations of up to 200m above present sea level. The highest terrace is most prominent in the Llanes region, forming flat-topped hilis and benches abutting onto the Sierra de Cuera escarpment which are known locally as 'sierras planas' or 'llanos'. Hernandez Pacheco (1949) considered that this upper level was the remnants of a late Pliocene partial peneplain. On the other hand,the terraces found at 85 - 95m, 50 - 60m, 30 - 40m, and 10 - 20m are marine terraces and correspond to the Sicilian, Milazzian, Tyrrhenian, and Monastirian terrace sequence established for the Italo-French riviera.
+
+Rising abruptly above the terraces of the coastal zone is the escarpment of the Sierra de Cuera. The range consists of two tectonically aligned parallel ridges running east-west, which are separated by a subsequent longitudinal valley. The ridge nearer the coast rises to 700m and the inland ridge to 1 300m where it forms the summits of Peña Blanca, Turbina and Lino. Both ridges are composed mainly of Carboniferous Limestone with moderate dips. For more detailed accounts of the geology see the article by Brooks in this publication or Hernandez Pacheco (1935), (quoted in Sole Sabaris (1952) ) who gives a series of geological sections through the Sierra de Cuera.
+
+(b) Drainage The El Mazuco area is drained by a tributary of the Rio de las Cabras, the combined waters of the Arroyos Bolugas \& Navalcabrero which flow down the Caldueño valley. The greater part of this water comes from a series of springs and risings draining the surrounding limestone.
+
+The main valley rising is situated at Cortines (Grid. Ref. 5039 9757) on the left bank of a stream bed which is dry above this point under normal weather conditions. A stream emerges from under a low arch, only visible under low water conditions when the discharge does not exceed an estimated 5 cfps. In flood, this rises to well above 100 cfps. Under low water conditions it is possible to enter a cave behind the rising which is described elsewhere in this publication. It is a typical resurgence cave consisting of a series of river chambers connected by siphons and flood bypasses. Between Cortines and the confluence with the Rio de las Cabras the flow is augmented by several small tributaries: the most notable are the stream arising from the cave below Buda and a tributary stream and a resurgence at Debodes. Connected with this resurgence is a cave first explored by the 1968 expedition.
+
+Continuing up the valley from the rising at Cortines towards the village of Caldueñin, the stream bed is dry except in time of flood. The stream bed ends at the mouth of Caldueñin Cave, from which water emerges in considerable volume after heavy rain. Normally, although running water is met inside the cave, its sinks again to the right of the entrance chamber to re-emerge at Cortines. 40m above the entrance of Caldueñin Cave is a small entrance in the cliff face. This is obviously an old water exit, now choked with stalagmite.
+
+Between Cortines and Caldueñin, the main valley is joined by a major tributary, the Arroyo de Navalcabrero. This is steep-sided and steeply graded and is dry in its lower section. A small stream flowing over sandstone further up the Arroyo de Navalcabrero sinks into limestone before reaching the main valley. The water goes presumably to the Cortines rising. The lower dry section of the arroyo crosses the likely track of the Cortines-Caldueñin connection.
+
+The Caldueño valley is shown in plate 1; the view is west from the saddle above Caldueñin. The valley section shows two prominent terraces. These are the Rotella - Villa - Las Tablas terrace at c 240m and the Cortines terrace at c 150m above sea level. The lower terrace is c 10m above present stream bed level at Cortines.
+
+Above Caldueñin there is no surface stream bed and the ground rises steeply to the saddle separating the Caldueño valley from the Bolugo depression. Just below the lip of the saddle is a small cave known as Kids Cave. On the saddle is the entrance to the Pozo de Fresno. This cave has a wide 20m entrance shaft leading to a series of large, old, and well decorated galleries and chambers, long abandoned by the stream that formed them. The small stream that enters the cave in wet weather follows a series of vertical shafts that reach a depth of 140m before choking. The shafts are obviously a more recent development than the upper galleries. The lowest point reached in the Pozo de Fresno is not far above the level of Caldueñin Cave, to which the water almost certainly drains.
+
+Across the saddle, at the bottom of a large depression is the entrance to the Cueva de Bolugo, 267m above sea level. The depression itself is funnel- shaped and about l00m deep. The Arroyo Bolugas enters the depression from the east, the water descending in a series of cascades to the cave mouth. The Cueva de Bolugo runs north-north-east from the entrance and consists of a large single passage carrying the whole volume of the Arroyo Bolugas water, which descends in a series of extremely wet pitches to a depth of 70m. This puts the bottom of the cave, a sump, at c. 200m as compared to the resurgence of Caldueñin Cave at 180m above sea level. The cave turns west as it nears the terminal sump. The flow of water into the Cueva de Bolugo ranges from 2-3 cfps in dry weather to 50-100 cfps in summer flood conditions. In winter floods, if local accounts are to be believed, the flow is very large indeed. An interesting feature of the cave is the large quantity of stalagmite that it contains. This is being actively eroded by the cave river at the present time.
+
+Just before the water plunges down towards the Bolugo cave mouth, the Arroyo Bolugas receives a tributary from the north, the Arroyo del Pasado, which flows for most of its course over a sandstone inlier. It has a catchment of 2 Km2 - After heavy rain, a flood pulse was seen to arrive at the Bolugo cave mouth after only 2 hours. owing to rapid run-off from the sandstone. Within 12-18 hours the whole system was in flood.
+
+Following up the Arroyo Bolugas, the stream becomes more and more steeply graded and towards the Boriza cliff, the stream descends in a series of cascades. Below the lowest cascade, a sizable resurgence is noted coming from under scree on the right bank. The valley ends in a vertical cliff, 50m. high, see plate 2. The stream emerges from the cave of La Boriza at the foot of this cliff. High up the cliff face is a large dry cave entrance screened by vegetation. This is now little more than a rock shelter, but probably represents an old high-level exit for the Boriza cave water, long since abandoned.
+
+Above the cliff continues a 'hanging valley' which is initially dry. A stream is soon encountered, however, which has its source at a large rising, the Ojo del Rio. The stream sinks in the valley floor, and is last heard some 200m. back from the edge of the Boriza cliff, over which it evidently flowed until recently. This water does not enter the Boriza cave system, but almost certainly reappears further down at the resurgence previously noted.
+
+The Ojo del Rio is impenetrable but close by is the Cueva a Sul, an abandoned water exit, and the Ojo del Rio water is met again, as it is in the Cueva de Callau Roviera whose entrance lies over the small col behind the Cueva a Sul. Beyond and above the Ojo del Rio lies a complex area of dolines on the valley floor, and a small cave, Iron Mine Cave, with a small influent stream. The water sinking over this whole area probably drains to the Ojo del Rio.
+
+To the east and over the watershed lies the extensive closed depression of the Yosa de Viango whose floor is flat meadow land. A stream sinks here but the destination of the water is unknown. Further still to the east, we cross another col and descend an arroyo running over sandstone which carries the stream that eventually sinks in Purón Cave.
+
+This has been a brief account of valley drainage around El Mazuco. Shaft development on the north flanks of Peña Blanca should also be mentioned. This is the highest peak on the main ridge to the south of Caldueño-Mazuco. The top of the ridge between Peña Blanca and Turbina is a 'plateau', completely devoid of surface streams and with little vegetation. Near the northern edge of this plateau, shaft development has been extensive. The area is a complex series of collapse dolines and deeply fluted shafts. Most of these are choked with boulders and scree, but some are open. One such shaft is the Torca La Manga, which has been descended for 60m. without reaching bottom. Further downslope on the El Mazuco side is the Roca de La Matuca, 50m. deep but choked. The water sinking on the plateau probably feeds the cave of La Boriza, which has been ascended to a point 130m. above the level of the entrance, and has a potential depth of 650m. if it can be connected with one of the plateau shafts. La Boriza carries about 1 cfps under low water conditions; this rises to over 10 cfps in flood.
+
+(c) Discussion and Conclusions. The interpretation of the sequence of cave development in the area is not immediately obvious, but clues are provided by a plot of the long profile of the Arroyo Bolugas, its tributary valleys and associated cave systems as shown in Fig. 4. The profile shows several knickpoints, the most prominent being the Boriza cliff, which is parallelled in the Arroyo de Navalcabrero. The knickpoints probably correspond to successive rejuvenation stages, brought about by eustatic lowering of sea level, the same agency that was responsible for the raised beaches and marine terraces of the coastal zone.
+
+On the basis of this hypothesis it may be inferred that the following sequence of development for the drainage of the area. Initially there was a gently graded valley, indicated by I on the figure, probably continuous with the 'sierras planas' erosion surface. The remnants of this valley floor are seen in the Caldueño valley as the Rotella - Villa - Las Tablas terraces. The age of these terraces may then be late Pliocene.
+
+A fall in base level then effected a major rejuvenation of the valley. The valley cut down in stages until its profile corresponded to II on the figure. There was a simultaneous rejuvenation of the Arroyo de Navalcabrero. During this time the stream in the stage I valley above the knickpoint (which is now the El Mazuco saddle) was captured by a developing underground channel. This was the Pozo de Fresno. This knickpoint has thus become fossilised. The Pozo de Fresno probably drained initially to the old high level resurgence situated now 40m above the entrance to Caldueñin cave. Only the upper series of the present Pozo de Fresno was involved; the lower series dates from the reinvasion of the pot by a smaller stream, following the capture of the main river by Bolugo.
+
+The Cueva de Bolugo, developing on a line of weakness caused by a fault, captured the river further upstream, causing the abandonment of the Pozo de Fresno. The Bolugo depression was then formed. The apparent knickpoint at the bottom of the Bolugo depression is probably due to a hard band in the limestone which forms a prominent scarp immediately above the cave entrance. The Arroyo del Pasado is also graded to this local base level, having cut back rapidly in relatively soft sandstone. The Arroyo Bolugas on the other hand has cut back only as far as the Boriza cliff which is another knickpoint, fixed in position by yet another underground drainage development which has taken place recently.
+
+At the end of the period of the formation of the Bolugo depression, the main valley resurgence was at Caldueñin Cave, and the valley floor lay at the level of what is now the Cortines terrace. This terrace is probably contemporary with the 10-20m. shoreline and would thus be of Monastirian age, i.e. developed during the Eemian (Last) Interglacial.
+
+The deepening of the Bolugo depression provided the impetus for the rejuvenation that has occurred within the cave of La Boriza. At stage I, the Boriza stream probably resurged near the top of what is now the Boriza cliff from the old cave entrance already mentioned. The level of this entrance is the same as Boriza Sump 1. It seems likely that the steeply graded lower section of the cave, Boriza 1, which is in such contrast to the extremely slight gradient and obvious age of the downstream end of Boriza 2, is a direct result of the deepening of the Bolugo depression.
+
+A further rejuvenation of the Caldueño valley has led to the capture of the water which used to resurge at Caldueñin by an underground channel leading to the rising at Cortines. The capacity of this channel is evidently still limited as water flows from Caldueñin Cave in time of flood. The resurgence cave at Cortines was probably developed as an outlet for the water sinking in the Arroyo de Navalcabrero, which it must still carry, for the stream is augmented between Caldueñin and the Cortines rising. It has captured the Bolugas water recently, probably in the post glacial period.
+
+The Cueva de Bolugo shows evidence of having undergone the same 'cycle of erosion' that has been described for many of the caves in the Cantabrians. This subject has been reviewed by Walker (1966). The phase of stalagmite deposition that has taken place in Bolugo was probably contemporary with the WUrm (Last) Glaciation when small glaciers on the Picos de Europa reached down to 1400m. above sea level. Thus the Sierra de Cuera, while not glaciated, certainly experienced periglacial conditions. The run-off into the Cueva de Bolugo was probably extremely low for long periods in consequence, leading to extensive deposition of stalagmite under these dry conditions. During the post-glacial period, under a much wetter climatic regime, this stalagmite is being actively eroded away.
+
+At the upper end of the valley, the Ojo del Rio is the direct result of a cross fault. The resurgence is perched, and the apparent knickpoint is a structural feature. The low hydrological gradient between the Ojo del Reio and the area feeding it accounts for the phreatic nature of the streamway in the Cueva a Sul and the Cueva de Callau Roviera. The large passages in the latter cave are of phreatic origin, as shown by the presence of very large roof pendants, and must therefore be very old, dating from the time of level 1. Vadose development is limited, and confined to the lower series of the cave where an active stream is currently found.
+
+This explanation of the development of karst drainage in the El Mazuco is based on only limited field work. A very careful survey of valley profiles and terrace identification will be necessary before supposition becomes certainty. It is hoped that it will be possible to do further fieldwork in the area in 1971, to settle some of the outstanding questions.
+
+
+
+HYDROLOGY REFERENCES
+Fairchild. R. W.,1961 Eustatic changes in sea level in Physics and Chemistry of the Earth, Vol.4. pp. 99-185.
+Gomez de Llarena, J. \& Royo J., 1927 Las terrazas y rasas littorales de Asturias y Santander. Bol. 8. Soc. Esp. Hist. Nat. T. XX VII, pp. 19-38.
+Hernandez Pacheco, E. y F., 1935 Observaciones respecto a estrasigrafia y tectonica de La Cordillera Cantabro-asturica. Bol. R.Soc. Esp. I-list. Nat. XXX V. pp. 487-499.
+Hernandez Pacheco, F., 1949 Las rasas litorales de las Costa Cantabrica en su segmento Asturiano. mt. Congr. Geog. Lisbon Vol.2, PP. 29-86.
+Sole Sabaris, L., 1952 Espana, Geografia Fisica. Vol. i of Geografia de Espana v Portugal, ed. Manual de Teran. Montaner y Simon, S.A., Barcelona.
+Walker, M.J., 1966 Cave development in the western Cantabro-asturic mountain chain. Proc. Oxford Univ. Cave Club Vol.4. pp. 3-11. Proc OUCC 4.
+Zeuner, FE., 1959 The Pleistocene period. London.
+
+
+
+\chapter{Caves explored}
+
+\subsection*{Cueva de Bolugo - by J.G. Sheppard \& G. C. Cox Grid Ref. 5058 9758.}
+
+Length 270m. Depth 67m. (Lambert Grid References are on the 1:50,000 Military Map Sheets 31 \& 32). Survey.
+
+The original discovery and preliminary exploration of the Cueva de Bolugo have been described previously (Cox, 1970 Proc. OUCC No.5, pp. 23-26; Dare, 1970, Proc. OUCC No. 5, pp. 34-36). This year, in favourable weather conditions, the pot was at last successfully bottomed. Only one party reached the final sump, but to achieve this several preliminary and subsequent trips were necessary, and in the course of tackling, detackling, photography and surveying every member of the expedition penetrated at least halfway down the cave.
+
+The entrance lies at the bottom of a large, steep-sided depression. The Arroyo Bolugas, a fair-sized river formed by the confluence of the Ojo del Rio and Boriza streams, is joined at the top of the depression by the Arroyo del Pasado. This stream runs for most of its course over sandstone, and carries only a trickle of water in dry weather. In wet weather, run-off from the sandstone floods it rapidly, and two hours after a thunderstorm it is contributing a sizable stream. Four hours after heavy rain the stream has risen so much as to make the cave quite impassable.
+
+The stream enters the depression from the east, descending a cliff-face in a series of cascades. In the lower part of its course (shown on the cave survey, Fig. 5) it turns through 1800 and enters the cave entrance, in the same cliff-face, running due east. The cave consists for the most part of a single vadose passage, trending in a northerly direction. It seems possible that it may follow the fault which intersects the depression (see geological map, Fig. 3), though this has not been definitely established.
+
+The entrance is large, giving on to a chamber evidently formed by collapse. The roof is a bedding plane, and the chamber extends northwards, to the left of the streamway, as a steep dip slope which eventually meets the roof. Just inside the entrance is a small hut, containing a very primitive hydro-electric installation. This is supplied from a dam at the head of one of the waterfalls, halfway up the cliff face, and consists of a small Pelton wheel, a long belt and an ancient DC dynamo. El Mazuco was due to be supplied with mains electricity in October 1970, so this fascinating piece of plant may be no longer in use.
+
+Part of the stream sinks in a low bedding-plane passage on the right of the entrance chamber. The remainder flows down two small cascades, then a 5m. waterfall, into a pool. The first pitch can be laddered dry from a large and convenient ledge reached by traversing along the dip slope on the left of the streamway. This gives a 9m. pitch into a deep pool, and a swim of 7m. across this leads to the lop over which the water flows. A short section of passage running eastwards leads to a sharp bend, where the passage turns northward and is joined by the water from the bedding-plane sink in the entrance.
+
+A vadose stream passage continues for 60m, descending a series of cascades of varying height. Progress is alternatively by swimming and walking until the second pitch is reached. This is a 2m. cascade, but it can be laddered as a dry 4m. pitch from a ledge. The latter course is advisable, both as a precaution against flooding, and because the struggle up a pitch against the full force of the stream can be almost impossible for an exhausted caver. From this point progress is by swimming or ladder climbing almost all the way to pitch 8. The current is strong enough to make the return journey difficult.
+
+60m. further on is pitch 3 - 5m. deep when rigged from a dry stalagmite ledge to the left of the passage. On the right, a sloping ledge 3m. above the stream leads on for l0m. past the pitch, but with no way down to stream level. It seems to be an old meander-level, but is now covered with stalagmite. At the foot of the pitch is a hazard known as the 'chunder-bowl' - the water plunges into a circular rock bowl, from which it exits some 2m. below water level in the adjacent pool. The ladder hangs into the bowl, but unless one wishes to take a most unpleasant dive it is necessary to swing the ladder so as to step off on to the ledge dividing the bowl from the pool. In slightly higher water conditions the water spills over the lip of the bowl, and this hazard is in fact made easier.
+
+At the downstream end of the pool a tree-stump is firmly wedged in a narrow section of the passage. This can be used as a belay for pitch 4 (6m.) some l0m. further on. In dry weather, most of the water is diverted sideways by a rock tube at the head of this pitch, and the ladder hangs in little more than a heavy spray. The foot of this pitch is a deep pool, churned by the waterfall, and one is swept bodily to the head of pitch 5. This is a 2=m. water chute, and it is easiest to slide down it. The ladder for the return journey hangs clear of the water.
+
+Pitch 6 (11m.) and pitch 7 (10m.) which follow in quick succession, are both similar. The first half of each is vertical, and can be laddered dry. The second half is sloping, and impossible to ladder dry; it is necessary to climb in the full force of the water, and this can be extremely unpleasant. Each cave developed his own technique of managing both to climb and to breathe. Going down, a popular technique was to lie on ones back and use the ladder as a hand line. Going up, there was little alternative to brute force and breath-holding. The force of the water sweeps one bodily away from the foot of these pitches, and long life lines are essential to regain the ladder for the return. Needless to say, a good wet suit is essential - one member had to be assisted from the bottom of the cave after a tear in his wet suit made one leg totally numb and immobile.
+
+l0m. beyond pitch 7 one leaves the deep water and takes a dry oxbow - a welcome change. The stream disappears down a series of cascades in a small passage. At the end of the oxbow, a static pool leads to the head of pitch 8, 7m. deep. The pitch joins the stream about 2/3 of the way down, at a sloping ledge, from which a 2m. drop leads into another bubbling, cauldron- like pool. The way on lies under a low arch, into a large, deep basin. From this the stream disappears into a short sump under a rock bridge; the caver must climb out, up a smooth 1m. high wall. A series of meander-ledges and dry oxbows provide a dry route, on the left of the streamway, until pitch 9 (Pulpit Pitch) is reached. This route avoids two wet pitches in the streamway.
+
+Pitch 9 is a 10m. drop from a ledge shaped exactly like a pulpit, and a pleasant free-hanging climb leads back to the stream. A short walk in the water and a climb down a cascade lead into a large chamber. To the left is a large flowstone cascade reaching up to the roof (30m.). In the streamway a pool containing flood debris and inhabited by a pallid frog leads to a shallow cascade. The stream turns sharply eastward into the final sump pool, which is choked with debris.
+
+Debris at various heights in the passage indicates that the sump backs up considerably in flood, and its level seems to be entirely flow-dependent. Thus it does not necessarily represent the level of the water table, or indicate that the cave becomes phreatic beyond it. The position of this sump seems to be close to the intersection of the NNE/SSW trending fault which intersects the Bolugo depression and the W/E trending fault which runs along the side of the Caldueño valley. High-level development begins to be noticeable in the lower parts of the cave, and it is possible that a high- level passage leading onward may exist at the head of the flowstone slope, which has not been climbed.
+
+One of the more interesting features of the cave is that in a number of places the stream runs over and through heavily eroded stalagmite deposits. The upper levels of the passage contain considerable active stalagmite deposits, but in the streamway there is, not surprisingly, no sign of current deposition. The erosion has taken place in the dry-weather streamway rather than at flood level. This would indicate that erosion has been corrasional rather than solutional; the dry weather water comes either from a long vadose system (Boriza) or an extensive phreas (Ojo del Rio), and cannot be very aggressive, while the floodwater contains a large amount of run-off from sandstone. This conclusion is reinforced by the nature of the erosion: banding can be seen, and all bands have been reduced to the same level. Thus at some point in its history the cave has been considerably drier than at present. This must have been in the last glaciation, and indicates that the cave existed in something resembling its present from at that time. This fits extremely well with the dating established from terrace levels.
+
+
+
+
+\subsection*{Pozo de Fresno - J. Davies Grid Ref. 5053 9756. Length 350m. Depth l40m.}
+
+Estudio. La entrada al Pozo de Fresno es una superficie extensa de gran inclinación
+
+Survey. The entrance to the Pozo de Fresno is a large steep-sided surface shakehole, down which numbers of dead animals have been thrown. At first glance it looks less than inviting, but the foul weather experienced by the 1969 expedition made any dry hole (the surface pot never takes more than a trickle of water) worth investigating. At the foot of the entrance pitch (20m.) are two ways on. The first, down which most of the carcasses have fallen, leads immediately to a 7m. pitch into Spare Parts Chamber. The litter of bones makes this a strangely desolate place, and there is no way on.
+
+The opposite route quickly leads into a large dry passage decorated by crumbling stalagmite formations and a frosting of calcite. The passage soon collects a minute stream, and after a traverse past a pool of liquid mud widens into a bagpipe-shaped chamber. It is here that the wonders being. The floor of this chamber is a whole series of rimstone pools, and the walls are embellished with occasional large stalagmite flows.There are some quite extraordinary helictites in this chamber, growing randomly in all directions, often horizontal for as much as 50cm., but always more or less straight. Sometimes these are seen growing directly from the roof (Plate 9), at other times they form wings and buttresses to vertical stalactites (Proc. OUCC No. 5 plate facing p.33). In 1970, one of these was found broken by a visitor. A large piece was taken back to England for analysis and found to consist of very pure aragonite.
+
+The lower end of this chamber leads to the 10m. pitch into the main chamber (Plate 14). The pitch is curtained off by a colonnade of stalactites, and this shields a truly wonderful vista. Towering up into the vastness of this chamber is a row of immense stalagmites, like a row of distillation columns in an oil refinery, the largest being some 1 2m. tall. Yet they seem almost to be lost, as the walls and roof remain out of sight. Giant stalactites hang from the roof; they can be seen from the top of the pitch but are more or less out of sight from the bottom. The floor of the chamber consists entirely of calcite, reddish-brown in parts but mostly clean, white and glistening. As in the chamber above, the walls are only occasionally decorated. At the head of the chamber, curtained off by another colonnade, is the 'chapel', a chamber containing numerous smaller, more delicate formations.
+
+A steep stalagmite slope leads to the lower part of the main chamber, which curves round to run almost parallel with the upper part. After climbing over boulder falls and old stal flows, one reaches the end of the chamber, once again hidden behind a stalactite colonnade. The water sinks through a mud floor, and we could find no other way on.
+
+Leading from the entrance series is a second route, which spirals downward to a final depth of l40m. This seems to be the system formed by the present stream, while the main chambers represent a former level of the Arroyo Bolugas system. A short crawl to the right, from the entrance passage leads to a 7m. pitch, beyond which the way bifurcates. One route leads to a pitch into the lower main chamber while the other leads, via a rope pitch, into a small chamber. From this a magnificent 15m, pitch hangs free into the centre of a pear-shaped chamber, where a small stream is met. This is presumably the stream which sinks in the main chamber. A steep stalagmite slope, which needs a rope, leads to the he 35m. pitch.
+
+This we called Mobius pitch, because of the strange way in which the ladder hangs. 0n the lower part of the pitch one climbs with one's back to the rock, in a veritable shower-bath of water. The exit from this aven was blocked by a stalagmite barrier, which quickly succumbed to the hammer. Within a few metres, the passage is impeded by a boulder, well cemented in with calcite. It is necessary to wriggle through a small hole above it - not too difficult in a downward direction, but very awkward going out. We named this the Schottky Barrier. After this is a 12m., pitch, below which the stream sinks amongst boulders. These might be dug out but it would be a mammoth undertaking. A rough calculation shows that the Arroyo Bolugas runs some 30m. below this point.
+
+In the year since our discovery of the cave, many parties have visited the Main Chamber series. The villagers were the first to do so, and they have led parties of local newspapermen and officials. These parties have been very careful to avoid despoilation. Alas, the same cannot be said of th cavers, some of whom have carved their names in foot-high letters in the stalagmite of the main pitch. The opening of the show cave will need considerable engineering, and will inevitably cause damage, but should in the end preserve the main beauties of the cave and make them accessible to the public. It will certainly be an exceptionally fine show cave.
+
+
+
+
+\subsection*{Kids' Cave Grid Ref. 5050 9757. Length 50m. approx.}
+
+The Spanish name of this small cave, which was shown to us by the village children remains unknown. It lies on the edge of the saddle overlooking Caldueñin village and directly between Fresno and the Cueva de Caldueñin. The cave consists of a sloping bedding-plane passage, running due east, at first some 2-3m. high and well decorated but soon closing down, and ending impenetrably blocked by boulders. It probably represents a very old phreatic development, lying on the original valley profile (I in the hydrological diagram, Fig. 4).
+
+
+\subsection*{Cueva de Caldueñin - G. C. Cox Grid Ref. 5047 9758. Surveyed length l30m.}
+
+Survey. The flood resurgence of the Arroyo Bolugas is a large cave entrance in a cliff face, below the saddle separating Caldueñin from El Mazuco. It must have been, until recently, the only resurgence for the Bolugo water: the capture of the stream by The Cortines Cave seems to have been a very late event in the history of the system. The stream is met a short way inside, within the limit of daylight, where it is a water-course and wash- house by Caldueñin village. In normal weather the stream flows from a large lake in the entrance chamber, running over stones for 20m. then sinking in a bedding-plane sump. In wet weather, the lake extends to the cave entrance, and a very sizable stream flows from it. This entrance chamber seems to have been formed by the enlargement of a bedding plane; this can be clearly be seen in the roof (Plate 4). The bedding in this cave does not correspond well with that seen elsewhere in the region; it lies near the intersection of two faults, which seem to have displaced the strata considerably.
+
+The cave beyond the lake is something of an enigma. A rift containing deep water leads due east from the end of the lake and our expeditions of 1968 \& 1969 found only a sump at the end of this. Nottingham University, in 1969, had the good fortune to enter the cave in a time of extreme drought, when no water was flowing from the lake to the downstream sump (Matthews, 1970 Tigguocohane - NUCC Newsletter No. 1 pp. 7-14). They were able to pass a duck into a large cave system they have not surveyed or described. In 1970, we found (in moderately low water) a side passage, leading from the rift, containing a low duck from which a strong draught was blowing. This led, via some short sandy passages, to another large, water-filled chamber, Water Polo Chamber. This ended in a sloping rift, probably following the strike of the limestone, and running parallel to the stream in the entrance chamber. The rift leads 'downstream', but neither here nor in the entrance lake is there any detectable current: mud stirred up in the normally clear water remains stationary until it settles. The water level is uniform throughout. No bottom could be seen in Water Polo Chamber nor the following rift, since the water is very clear this must mean that it is at least 5m. deep. It seems possible that this rift may continue under water until it meets the bedding plane of the downstream sump - there are certainly signs that this bedding plane continues under the south wall of the entrance chamber. Thus both ends of the surveyed cave are downstream. Where the water enters remains mysterious, but the most probable place see north-east end of the sump complex. Before the trend of Water Polo Chamber was realized, attempts were made on the sump at the end of the first rift. It could be free-dived to an air-bell, but the survey showed clearly that it only lead to Water Polo chamber. Further exploration in this cave must await another freak drought.
+
+At the top of the cliff, some 20m. above the present entrance, is a small cave, containing old and decaying stalactite formations. This probably represents an earlier resurgence of the Bolugo water.
+
+
+\subsection*{Nacimiento del Rio, Cortines - G. C. Cox Grid Ref. 5038 9757 Length 200m.}
+
+The water of the Arroyo Bolugas resurges at a large rising just upstream of the village of Cortines. In 1969, there was no air-space at the entrance, but the roof could be felt to rise inside, affording hope of gaining access to a cave in drier weather. In 1970, during dry weather, it was possible to enter through an easy duck, which led immediately to a large stream passage. After crossing a series of water-filled pots, one walks for a little way on ledges just above the stream, the remnants of a resistant stratum (probably a shale band). Then follows a swim through deep water. The stream then runs for some 6m. under the left-hand wall of the passage. The caver has a choice between a low crawl through a floodway, ending in a letter-box squeeze into a pool, or a climb up a stalagmite slope and down the far side.
+
+A spacious stream passage (the stream again flowing partly beneath the left- hand wail) leads on to the main chamber. This is a large collapse chamber, floored with large boulders and containing copious deposits of sand. At the northern corner of this roughly triangular chamber, a crawl under boulders or a traverse along a sand ledge leads to a small sandy chamber, from which a crawl leads on. This showed signs of inhabitation by an otter, and has not been pushed. From the eastern corner, another crawl under boulders leads to a series of flood streamways. The main stream is met at a flowing sump, but cannot be followed. Uphill Passage, a section of the floodway 2m. wide and in. high, has scallop marks all over floor, walls and roof. It is evident that in times of flood the stream flows up this passage, the downstream end of which is 3m. higher than the upstream end. Just beyond this, the walls and floor of the crawl are covered with a very strange formation, carved by flowing water into a series of tongues. This is reddish in colour, and looks somewhat like a band of an iron oxide, though it is possible that it is in fact an eroded stalagmite deposit (Plate 7).
+
+Beyond the crawl is a rift-chamber, containing some very fine stalagmite formations. The dry weather stream flows somewhere under the left-hand wall, but on our first visit to the cave a trickle of water ran along the bottom of the chamber from a large upstream sump. Just below the sump a tiny tributary enters, running in at the top of the chamber down a stalagmite cascade, and then flowing through a series of pure white gours before joining the stream (Plate 6). Near the roof a large passage can be seen, but the 12m. climb up to it would be artificial aids, and has not been attempted.
+
+On our second visit to the cave, a few days after the first, there was no stream in the rift chamber, and the terminal sump had become a duck, with an air-space of some 2cm. This continued for 1.5-2m., after which the air-space became a more comfortable 15cm. After a further 5m. of this, the duck ended in second, smaller rift chamber, with the stream flowing at the bottom of it. Halfway along this chamber the stream flows through a sump under boulders, but this can be by-passed higher up the sloping rift. At the end of this chamber is another sump, but this can be by-passed by a squeeze through a tight rift. This leads once again to the stream passage, but only a few metres further on the stream sumps again. A very tight crawl offers the possibility of a by-pass. However, only one person had managed to pass the duck, and he did not relish forcing himself into a tight hole with no assistance available should be become stuck.
+
+The upper levels of the cave, particularly the main boulder chamber and the first rift chamber, are evidently of considerable age, while the streamway shows clear signs of both rejuvenation and invasion by a larger stream than that which formed it. It seems clear, then, that the cave existed in more or less its present form before capturing the Arroyo Bolugas water from Caldueñin Cave. The increase in water volume between Bolugo and Cortines indicates that the original stream still flows into the system. The large outcrop of the underlying Devonian sandstone to the south of the cave, and the dry valley immediately to the north make it virtually certain that this original stream comes from the Arroyo de Navalcabrero, and it is presumably the stream which sinks, low down the arroyo, as soon as it crosses on to limestone. It is noteworthy that even in large summer floods little or no water flows down the Arroyo de Navalcabrero beyond this sink, so that it must, although choked, have a considerable capacity.
+
+A small resurgence cave lies 150m downstream from the Cortines rising. This cave can be entered for about 20m., after which it becomes too tight. This is almost certainly unconnected with the main system.
+
+
+
+\subsection*{La Boriza - by G. J. M. Dare Grid Ref.5065 9755. Length 1,200m. Depth 140m}
+
+Survey. La Boriza was first entered by the OUCC expedition of 1969, and a description of the exploration of Boriza I will be found in Proc. OUCC No. S. The cave lies at the foot of a steep cliff at the end of a hanging valley; the stream emerging from it joins almost immediately with another, rising among boulders, to form the main stream flowing into the Cueva Bolugo, 750m. downstream.
+
+In 1969, we only penetrated as far as Sump 1, largely because of the unfavourable weather conditions. At the time, not having surveyed the cave, we thought that the passage ran under the main valley: the distance to the sump corresponded roughly with the distance from the sink to the cliff face, and we thought that any further breakthrough would lead to daylight. Only after Boriza II had been discovered was a compass used to find that the cave in fact lies under a shallow dry valley, running down the mountainside at right angles to the main valley. The water sinking in the main valley has nothing to do with the cave.
+
+Briefly, the cave before the first pitch consists of two fairly deep pools, each followed by a cascade some 2m. high, then a fine meandering streamway in a passage some 2m. wide and 2m. high. The first pitch is only some 9m. in height, but the ladder has to be hung under the full force of the water. If the water is too high, there is an alternative dry traverse, but it is more dangerous. Beyond the first pitch the character of the cave changes a little; the roof is often less than 3m. above the water,and the passage consists of a series of pools, some quite deep, connected by short stretches of streamway (Plate 8).
+
+The cave opens out some l00m, beyond the first pitch; two cascades have to be climbed, then a very wet 3m. pitch. As with so many pitches in this area, little can be done to avoid hanging the ladder in the full force of the waterfall. At the top of this second pitch is a lake, which leads to a duck (a short sump in moderately wet weather), followed after a short air bell by the sump proper. A side passage leads up into the roof, carrying a very strong cold draught, originally thought to come from the surface.
+
+This was the limit of exploration in 1969, and we had all assumed that it was the end of the cave. Therefore the 1970 expedition was already 10 days old when John Forder and I went in intending to do a thorough survey - though it was not to be made for some time! We did not enter until after midday; we quickly reached the first pitch, which John climbed first. I followed when a ladder had been hung. We took the rope on to the second pitch, which John again climbed first - I followed with some reluctance. Once at the top John went up the side passage to have a look around, and eventually I decided to follow. Somewhere in a maze of tight and dirty passages I met John coining back. Following a strong draught he had reached a steep chute which led down to a black and uninviting pool, but though it appeared to be enclosed by rock walls, I decided to have a look, so we tied two slings together, and I slid down into the cold water. There appeared to be a way on, along a passage almost filled with water. Slowly the passage became higher, and some 50m. beyond the pool I emerged into a large chamber, with a dry sandy passage going off to the right, and a great stream passage leading to the left.
+
+After a quick look around I returned for John, who followed half suspecting a hoax! Once again the cave had changed its character; it had now become a massive wide and lofty passage with vast lakes, deep, wide and very cold (Plate 11). Going off into the roof were great dry passages, probably contemporaneous with the old cave entrance near the top of the cliff above the present entrance. These are now largely collapsed or choked. We followed the main streamway, swimming through a lake, then following a shallow stream to another series of lakes. We went as far as the end of the second lake, where there was a sort of T-junction, then turned back. I had to drive to Purón that evening, to pick up a walking party, and furthermore, if anything had happened the rest of the expedition would have had difficulty finding us.
+
+Next day John and I were accompanied by Jim Sheppard. Beyond the T-junction the passage went on to the left through another lake, past an inlet passage, through a pool under a duck into a narrow but high stream passage (Plate 12). This part of the passage - some 800m. long - was easy to move along, and interesting in structure. It followed a zig-zag course, alternately following dip and strike. The dip-determined passages were steeply graded, consisting of series of cascades, while the strike passages had a gentle slope, with frequent deep potholes in the floor. In places the passage seemed to be as much as 50m. high - there are signs of a roof series, but we were unable to climb the slippery and sheer walls of the passage. Various inlet passages enter at lower levels - these have not yet been fully explored. The day's exploration was brought to a close by a third pitch.
+
+On the following day, another party led by John Forder climbed the third pitch and reached Shelob's Lair, a large chamber into which the stream emerged from a sump. A sandy passage, leading into the roof, proved to narrow down - it was not another sump by-pass. Attempts to free-dive the sump were not successful. There is, though, a high-level passage which appears to continue, but a maypole will be needed to reach it. For the moment, this is the end of Boriza. On the way out, John investigated the first sump, and found it to be a short and easy free-dive. A rope was laid through this sump, and the ducks upstream of it, and most subsequent parties used this route instead of the right and unpleasant by-pass.
+
+
+
+\subsection*{Torca de La Matuca Grid Ref. 5066 9745. Depth 50m. Survey}
+
+On the flank of Peña Blanca is a large shaft, the top of which has been closed with heavy capstones. The shaft falls in a single 50m. pitch, broken only by a ledge, to a sloping boulder floor. A stream can be heard at the bottom, which is very close to the surveyed end of Boriza. Unfortunately, the presence of a number of old, but live, Mills bombs and other ammunition at the bottom rules out conventional digging, but the choke might yield to a few sticks of explosive detonated from the top.
+
+
+
+\subsection*{Torca La Manga Grid Ref. 5062 9739. Depth 65m. Survey}
+
+Further up the mountainside, and only l00m, below the summit of Peña Blanca, is another pothole, the Torca or Cueva La Manga. A large cave entrance leads to a 20m. pitch into a large chamber with a sloping scree floor. This descends a further 25m. to the head of a 2Cm. pitch, which has not been descended. The walk up to this pot with caving tackle is a major undertaking in itself, but a further trip, with more ladder, will undoubtedly be made. This pot is probably part of the Boriza system, and while the chances of making the connection are not outstandingly good, the total depth if it could be done would be 720m. - and a through trip!
+
+
+
+
+\subsection*{Other potholes on the flank of Peña Blanca}
+
+The terrain on the uplands of the Sierra de Cuera is very rugged, and holes abound. Most, however, are simply enlarged grykes and choke fairly close to the surface. The Torca La Manga and Torca de La Matuca seem to offer most prospect of connection with an active cave system, but two other apparently open holes have been seen on the north-western slope of Peña Blanca.
+
+The 'Urben No. 1 Hole' (Grid Ref. 5066 9744) is a small, steeply descending cave discovered by Peter Urben. It reaches an estimated depth of 20m., then becomes too tight for further progress. It almost certainly communicates with a cave entrance on the hillside below, which is used as a shelter by cattle. 'Andy's Hole' (Grid Ref. 5071 9739) was discovered by Andy Brooks in 1969, but has not yet been descended. It is a large open shaft, which appears to be at least 3Cm. deep.
+
+
+
+
+\subsection*{Ojo del Rio. - G.C.Cox Grid Ref. 5071 9752}
+
+Ojo del Rio is a local name for the source of a river, and another large resurgence in the area also bears this name. Where there is the possibility of confusion, therefore, this rising is referred to as the Ojo del Rio Bolugas. (The other is the source of the Arroyo Vibana.) It is a large resurgence, carrying 1-2 cfps in normal weather, at the head of the Arroyo Bolugas, to the right of the small hill dividing the valley. On the left is a much smaller, diffuse resurgence.
+
+The stream resurges under a broad ledge - there is a small cave entrance at the right-hand end, but this leads immediately to a sump. Some 5m. behind the resurgence, the stream can be heard from a small hole between boulders, but we have not attempted to dig this. Just downstream from the resurgence are two tiny cave entrances, which communicate but merely lead to a very tight bedding plane sump. Above the Ojo del Rio, 2Cm. up the hillside, is a small pothole, the Torca La Verde, but this is really little more than an enlarged gryke, and chokes after only 1Cm. It seems most unlikely that there is a penetrable cave system behind the rising - wherever the stream is met in Cueva a Sul or Callau Roviera it sumps at very frequent intervals.
+
+
+
+\subsection*{Cueva a Sul - G. C. Cox Grid Ref. 5071 9753. Length 250m. Depth 22m.}
+
+Survey Survey. Only a few metres from the Ojo del Rio, at the foot of the small hill dividing the valley, is a cave entrance from which a small trickle of water runs. A path has been made for a short distance into the cave, as the entrance is used to store dairy produce from the nearby farm. Beyond this, one plunges through a waist-deep pool into a chamber. To the left, a spacious passage leads off but soon chokes with stalactite. To the right, the stream emerges from a tight, very wet squeeze.
+
+Beyond the squeeze, a passage leads down on the left to a large, apparently static sump. The way on, though, lies ahead, up a stalagmite slope into a maze of small passages. The stream, such as it is, has been lost by this time. At several points one can choose between tight low-level crawls and awkward high level chimneys, reaching in the end a fair-sized chamber. On the right, a steep slope leads down to another very large sump. Straight ahead, the way on is an awkward climb of 16m. up a steep stalagmite slope. This is made much easier once the first person to climb it has hung a rope down.
+
+There is a much easier climb down the far side, ending in an even more complex maze of passages. Some lead back behind the climb, joining in a blind passage containing chest-deep mud. Another route leads up and up, eventually emerging in the roof some 5m. above the aven climb. The main route, though, leads into some large chambers and passages. One passage is floored with superb crystal gour pools. Throughout the cave, in fact, the formations are very fine. The large passages choke off, but a climb up into a small hole leads to a small tube, which descends into a small chamber. On the far side of the chamber, the tube ascends steeply until the floor suddenly drops away in a pitch, at the bottom of which a stream can be heard.
+
+This raised high hopes when first reached, but these were not to be fulfilled. The pitch drops 5m. to a false floor, beyond which it opens out, failing for a further 14m. into a large stream-chamber. The stream flows between two sumps, only some 1Cm. apart, with no sign of high-level by- passes. This stream passage is at more or less the same level as the Ojo del Rio, as are the stream passages in the Cueva de Collau Roviera (qv). The two caves are probably about 6Cm. apart at their closest points, and the relationship between the three stream passages in the caves, and the static sumps at approximately the same level, is obviously complex. As Francis Sanders has pointed out in the hydrological report, the Ojo del Rio is obviously controlling the level of the water table in the entire system, and the active streamway is very largely phreatic. Judging by its size, the Cueva ~ Sul streamway probably carries the entire Ojo del Rio stream, but whether this true of both stream passages in Callau Roviera, or whether one or both are tributaries, is a question which cannot at the moment be settled. The two streams in Callau Roviera flow in almost opposite directions, and it is conceivable that the stream in the Right Hand Series does not flow to the Ojo del Rio, but to the blocked resurgence on the opposite side of the valley. The two resurgences are at the same level, and only some l00m, apart, so they could both be outlets from the same water-table. Any such hypothesis, though, must be purely conjectural.
+
+
+\subsection*{Cueva de Collau Roviera - N. Boulton Grid Ref. 5073 9752. Length 300m.}
+
+
+
+
+(l) Cueva de Collau Roviera - N. Boulton Grid Ref. 5073 9752. Length 300m.
+Survey. Depth 40m. Two kilometres from El Mazuco, at the head of the Arroyo Bolugas, one comes across a small hill dividing the valley. The Cueva a Sul is situated at the foot of this hill. Over the top is a large dry entrance, Callau Roviera, the most complex of the caves visited in the area this year. Because of its complexity and the fact that the cave was accessible in all weather, the exploration and surveying of it were a low priority, and not completed until the end of the expedition, when half the members had returned to England. A preliminary investigation was made by John Forder and Geoff Dare in the hope of finding a connection with the Cueva a Sul, 4Cm. below. The main pitch was descended, but the maze of passages encountered below belied any hopes of finding an immediate connection.
+
+During the last week of the expedition, therefore, a team was sent to complete the exploration and produce a survey. Two trips were made, each one revealing more passages in a complex maze. In fact, exploration was not completed, and what follows is merely a description of the stages of the cave which have so far been penetrated and which have been pieced together into some kind of unity.
+
+Obviously the limited scope of Collau Roviera meant that it was never one of our primary targets. But exploration did raise some interesting problems, for example the origin of the cave, and the unique character of the stream and sump complexes. in this respect, it was an attractive system and it is only to be hoped that further exploration will provide answers to some of the problems posed this year.
+
+The upper cave can best be described as a large, almost horizontal chamber, extending beyond the pitch, which is simply a large hole in the floor to one side of the chamber. A wholly phreatic origin is inferred from the presence of roof pendants. Some idea of size can be gained by the fact that during storms the local cows shelter in the cave. Latent speleological tendencies among Spanish cows can be inferred from the fact that the area of manure is by no means confined to the outer reaches of the cave, but extends to within a comparatively short distance of the head of the pitch. Furthermore, there is no evidence that these would-be cavers have taken unnecessary risks; the floor at the foot of the pitch is entirely free from the debris one would associate with a cow descending 27m. without a ladder.
+
+The pitch itself, 27m. deep, is fairly easy, being close to the wall almost all the way, with one large ledge about one third of the way down. At the bottom, the cave takes on the aspect of a maze. The Right Hand Series which goes to the stream is itself divided into right and left hand branches. The Left Hand Series is also extremely complex, affording another circuitous route to the stream. Jim Sheppard has entered a Centre Series, but this remains largely unexplored.
+
+The Right Hand Series consists of a number of routes leading to an active stream passage. As stream passages go, this is perhaps a little disappointing for the distance between the upstream and downstream sumps is something approaching 3Cm. The upstream sump is so tight as to defy further exploration, and its downstream counterpart develops bedding plane tendencies at an early stage. The Orange Slope, which begins on the left hand side of the stream, was named because of the colour of the stalagmite flow; it can be traced around and above the stream, where a direct route from the pitch joins, and through the chamber, containing the high-level route, and another steeply descending passage which reaches the stream on the right-hand side. It then proceeds upwards at an increasingly steep angle until it develops into a tube, which was pursued until it was apparent that nothing was going to come of it. The nature of the rock in this series ensures that exploration is extremely uncomfortable, and because of the tightness of the passages, it is difficult to avoid the sharp edges.
+
+The Left Hand Series is more comfortable because the passages are wider. The Twin Chimneys route was used to descend to another section of stream passage, equally short and equally uninviting with respect to sump exploration. The second route, which emerges into the pitch chamber more or less behind the ladder involves some hair-raising clambering about amongst dead stal and loose boulders.
+
+By far the most rewarding part of Collau Roviera is the gallery which we climbed into when pursuing the horizontal trend of the slope which the route to the stream joins to the left. Here one gets the chance to examine a finely scalloped floor in close detail, as the roof is some 20-30cms. above it for most of the way. One emerges on the edge of a static sump, but by climbing up the left hand wall, where the mud is of a fine texture, another gallery is reached. The dimensions of this part of the system are reminiscent of the Upper Cave. The mud chamber at the bottom is impressive enough; the gallery then proceeds upwards at a moderate gradient, and there are several calcite pools to be traversed before reaching the stal flow. The gradient at this point increases, though the roof and walls of the chamber remain constant. On the right hand side, about half way up the climb, another gallery was found, containing several chambers with interesting stalagmite flows. This chokes off in a rift below. Perhaps some 3Cm. above the stal slope there is a grotto of stalactites and stalagmites, many tinged with copper deposits. This gallery could provide many potential photographs, but by the time it was discovered both time and photographic materials were in short supply. This must therefore wait until next year.
+
+The survey which was produced (Fig. 15) does not do justice to the infinite complexities of the cave, but it does at least show some of the problems which were encountered. By far the most pressing of these problems is that of trying to determine the flow of water in relation to the Left Hand and Right Hand Series, the Cueva a Sul and the Ojo del Rio. Further exploration may provide at least some of the answers.
+
+
+
+
+\subsection*{La Torcona del Valle Grid Ref. 5072 9749. Depth 35m.}
+
+
+A short way up the hillside, beyond and to the right of the Ojo del Rio Bolugas, is a beautiful sheer 30m. shaft, with a stream running across the bottom. We descended with high hopes, to find that the steam emerged from under boulders, ran down the steeply sloping floor of the pot into a chamber, and sank again into boulders. There was no way on. This stream is certainly a tributary of the Ojo del Rio.
+
+
+
+
+\subsection*{Cueva de Buda - P. C. Urben Grid Ref. 5029 9750. Length 200-300m.}
+
+
+Early morning exploration (a personal taste, not shared by the majority of the expedition) had shown the existence of a large bowl, unmarked on the map, where the sandstone meets the limestone on the south side of the valley above Cortines. This depression did not seem to have surface drainage, so it was thought that resurgences from it might be found. The map showed a small stream emerging below the hamlet of Buda, and this was thought promising.
+
+A mapping and photographic trip to the Cortines resurgence gave opportunity for investigation. Francis and I walked down to Cortines, and continued to the stream marked on the map (and also extant on the ground). The stream was followed to its source, a large spring beneath a small cliff, with a moderate size flood exit to the right. The flood exit bent round to the left, becoming a crawl, and then entered a still pool across which running water could be heard.
+
+Returning to the bar, to find the remainder of the party, Francis went to survey the Cortines cave and I returned to Buda with Jon Davies and some caving kit. As we made our way to the cave, a party of Parisians lunching beside the track was astounded by a pair of Englishmen hung with strange impedimenta. Donning full wet suits we plunged into the unknown, which was not as deep as expected. We were soon able to stand, and thereafter never got more than our ankles wet. Round a corner and we met a sump.
+
+Various low level holes were examined, but did not appear to go, but 10 ft. up to the right an abrasive crawl gave way to a passage which rapidly became a walk. This very dry passage, where all sound of water was soon lost, is probably still active in flood, judging by occasional sand deposits. After perhaps 15Cm. the passage became an upper level in a rift, about 5m. above water. We chimneyed down, with some difficulty due to the spiky nature of the rock to which the back was pressed, and followed the stream along the rift for another 3Cm. The rift, which was extremely sinuous, but not so tight as to seriously impede progress, then emerged into a moderate size chamber containing a large, clear and deep sump. There were no side passages. Returning to the rift Johnny climbed 25m to the roof, but could find no high level route. We returned by the stream passage, which retained the characteristics of a rift until the first sump was reached. Two short fairly tight crawls to the left by-pass this, emerging into the entrance chamber via holes earlier thought not to go.
+
+The cave is some 200-300m long and of slight gradient. The rift appeared to cut through the strata, frequent changes in the nature of the rock being observed. Some of the flood-drainage may come from Buda village, as two cooking-oil bottles were found in the entrance pool. The stream does not diminish much in size between the entrance and the terminal sump, so a further system may exist beyond.
+
+
+
+\subsection*{Debodes Caves Grid Ref. 5017 9756}
+
+
+These caves lie near the road, on the south bank of the Arroyo Bolugas- Navalcabrero just downstream of Debodes village. The first known speleological visit to them was made by the OUCC 1968 expedition, who found an active resurgence cave, with a low entrance, and, some 50m. downstream, a large dry cave entrance. Respect for the village women, who were washing clothes in the stream from the active resurgence, led them to investigate the dry entrance. Some 100-20Cm. of muddy and uninteresting passage was explored, with no sign of a connection to the active stream.
+
+In 1969, a Nottingham University party paid a visit to the area. (Matthews, 1970, Tigguocobauc - NUCC Newsletter, 1, 7-14). They entered a cave which they describe as 'Cueva Debodes'. They do not specify which entrance this was, but it seems probable that it was the stream resurgence. An estimated 600m. of passage was explored.
+
+
+
+\subsection*{Cueva Laneveru - F. E. Sanders Grid Ref. 5036 9738. Length 40Cm. Depth 30m.}
+
+
+Survey. Rumours of the existence of this cave were first heard by the 1969 expedition, and in 1970 we were taken up to it by a group of El Mazuco villagers. The first descent was made by two expedition members, two or three villagers, a boy and a dog, with a single malfunctioning carbide lamp as the only source of light. Needless to say, it was left to a follow-up party to complete the initial exploration!
+
+The entrance to this cave is situated very near the col at the head of the Arroyo de Navalcabrero, a conspicuous steep-sided valley which cuts southwards into the limestone escarpment between Caldueñin and Cortines. The cave is best approached by a path which runs across the saddle from El Mazuco and enters the valley high up on the eastern side. Here is noticed some very prominent minor folding associated with a fault whose trend is approximately north-south, passing across the mouth of Caldueñin Cave, up the eastern side of the arroyo to disappear finally in the massive limestones of the main ridge of the Sierra de Cuera. The fault has resulted in the exposure of a sandstone inlier which forms the floor and western side of the arroyo.
+
+About three quarters of the way up the arroyo, at the point where it bends to the west to follow the limestone-sandstone junction, a stream resurges from under scree. This flows northwards down the arroyo to sink again where it crosses on to limestone, not far above the track from Caldueñin to Cortines which follows the dry river bed in the main valley.
+
+300m. up the arroyo from the resurgence is the entrance to the Cueva Lanerveru. It is a large hole on the south side, partially blocked by boulders, which takes a small stream running off the sandstone. The entrance emits one of the most powerful draughts that the author has encountered in a cave. A short climb down of perhaps 5m. leads to a well-developed meandering rift passage carrying the stream. Almost immediately this is joined by a low passage coming in from the right. This leads upwards in a series of crawls to a large aven by which another small stream enters the system.
+
+Following the main passage downwards, after a hundred metres a pitch is reached (6m.). Traversing over the pitch, a climb leads down to the stream. A tight section follows, then a small chamber at the end of which the stream sinks into an impenetrable rift. This portion of the passage was obviously far less mature than the entrance section and there was no draught, indicating that the way on lay elsewhere.
+
+We then tried for a high-level by-pass to the impenetrable section of streamway. A climb, or rather struggle, up the tight rift immediately back from the small chamber led into a high-level roof tube which soon gained a floor and started a steep descent. After an awkward section of traverse over a deep crevice in the floor, the tube levelled out and emerged into a large phreatic passage of the railway-tunnel type. A crack to the right led back to the stream. Following the tunnel, a sharp left turn led down scree to what was obviously an old siphon pool. A sharp right turn then gave access to a long and very spacious rift passage of an entirely phreatic character, with some very large roof pendants. 13Cm. on was a boulder choke. The way on was obvious, but further progress involved a dangerous squeeze under loose boulders, and was not attempted. Efforts to climb over the choke were unsuccessful.
+
+The size and maturity of the upper entrance section is in complete contrast to the immature streamway of the lower section, arguing that the cave once carried a much larger stream than it does now. The Arroyo de Navalcabrero also carries a stream which is smaller than the size of the valley would suggest. It is possible to postulate that the Arroyo de Navalcabrero and the Cueva Laneveru once carried a stream whose waters have since been captured by extension of the valley to the west of the col, whose mouth is now a large dry gorge. The Cueva Laneveru has been reinvaded by small stream of local origin, which has been responsible for recent vadose development in the lower section of the entrance passage.
+
+The trend of the cave is to the west, following the strike, the dip here being to the south. For this reason, and because the magnitude of the draught implies a large system, it is improbable that the water from this cave resurges in the Arroyo de Navalcabrero. A more likely resurgence is that of the Cueva sin Nombre (or Cueva Geoffo) near Mere, at Grid Ref. 5006 9736. This cave has been explored for some 40Cm. to a siphon by a Nottingham University Expedition, and is fully described in their report, (Exploration 1968, University of Nottingham Union, pp. 12-16).
+
+If this were the resurgence of the Cueva Laneveru it would involve an underground passage of over 3km., with a fall of 500m. We speculate then that the Cueva Laneveru is a surface feeder for an extensive cave system running east-west and draining the western flank of Peña Blanca. Some boulder-shifting and stabilising in the terminal choke could therefore lead to a considerable extension.
+
+
+
+
+\subsection*{Iron Mine Cave (Cueva del Mina de Hierro) Grid Ref. 5083 9750.}
+
+
+In the rather dissected valley to the east of the Ojo del Rio Bolugas is an abandoned, very primitive, iron mine. Near this is a small influent cave, which has been entered but not fully explored. This may be one of the feeders of the Ojo del Rio.
+
+\subsection*{Cueva del Yosa de Viango Grid Ref. 5103 9745.}
+
+
+Eastward of the dissected area, the floor of the valley is flat and level, forming an upland meadow, the Yosa de Viango. This is surrounded on all sides by higher ground, so all drainage must be underground. A stream bed, carrying only a trickle of water in dry weather, runs along the southern side of the meadow. This ends at a cave entrance, which we have not examined at close quarters. The locals, though, say that it is open. The altitude of the meadow floor is 402m., that of the Ojo del Rio 42Cm. The water, therefore, must flow elsewhere, and since there is sandstone to the south and the east it must flow northward. The most likely rising seems to be the large spring at the foot of the scarp which provides Llanes with water, (This seems to have been originally the source of the Rio Carrocedo, now almost dry in its upper reaches).
+
+\subsection*{El Cuevón de la Pruneda - Cueva de Purón - G. C. Cox Grid Ref. 5181 9753.}
+
+Updated Survey Explored length 450m. The Yosa de Viango is bounded at the eastern end by a sandstone outcrop, exposed by a fault. This forms a watershed (Las Llamarcas) in the valley between the two ranges of the Sierra de Cuera. Beyond the watershed, a stream runs for 3 km. in a sandstone valley, sinking where it crosses on to limestone. Prior to development of underground drainage, the stream flowed over the sandstone col between the hills Ahorcado and Pruneda, but the present sink is to the east of this, directly under Ahorcado. This we have called the Cueva de Puron, for want of a better name. The rising lies over the col, in a steep-sided and steeply-graded valley, and the stream from it joins the Arroyo Barbalin, a tributary of the Rio Puron, at Purón village. Speleogroup later verified from locals in the village that the correct name is El Cuevón de la Pruneda.
+
+% The cave has two entrances, a normal and a flood sink, at the foot of a small cliff. Both are penetrable in dry weather. A tributary stream sinks in a shakehole 35m. away, and resurges in the cliff face beside the flood entrance, before flowing into the cave. (The passage through which it flows is small, but the through trip can be made in dry weather). The entrance passages join in a very large, boulder floored stream passage, with a gentle gradient, running due east. After about 15Cm. this turns sharply northward, then eastward again, becoming narrower and more steeply graded, with frequent small cascades. This passage becomes a very narrow vadose trench; a large phreatic passage can be seen above, but it is inaccessible. After some 2Cm. of this uncomfortable passage-form the streamway widens again, and the cascades become larger and more frequent, separated by pools. Two of these form our Pitch 1 - a hand line is adequate here, but a ladder is more convenient.
+
+The second pitch follows after three further cascades. An awkward traverse above the steeply descending streamway leads to a stalagmite slope, at the foot of which is the pitch proper. This is a circular shaft, with the dry- weather stream shooting into it from a small hole. The ladder hangs under a flood streamway, which on the occasion of our visit carried a small trickle. At the foot of the ladder one swims off into deep water, in a chamber with no apparent exit. The stream, striking the opposite wall of the pitch chamber, completely conceals the way on, and it is necessary to plunge through the torrent to reach the small exit.
+
+A right-angled bend restores the predominantly eastward trend of the cave, and a large passage containing frequent deep pools continues. This ends in a fair-sized boulder chamber. The stream sinks under one wall, but a flood streamway leads out in a southward direction. Soon, at a 3m. free-climb, the passage turns eastward again. A further 3m. climb follows, then a pitch, estimated to be 2Cm. deep. This marks the limit of our exploration, but there is no sign of an end to the cave.
+
+We did not visit the actual rising, which is rather inaccessible. However, a plot of the valley-profile from the map (Fig. 18) shows a pronounced knickpoint, and if this marks the rising the cave will have a total depth of 16Cm. and a length (covered on the surface) a little short of 1 km. (Judging by the passage so far surveyed, this would represent a cave length of about 11/2 km.). Unfortunately, the north-western wall of this valley is composed largely of scree, so it seems probable that the resurgence will be blocked, preventing a through trip.
+
+
+\chapter{Other caves in the western Sierra de Cuera}
+
+\subsection*{Cueva Geoffo (Cueva sin Nombre) Grid Ref. 5005 9737.}
+
+A large resurgence cave in the Mere valley, draining into the Rio de las Cabras, which has been explored for 40Cm. to a sump by Nottingham University Caving Club, and is described in the report of their 1969 expedition (Exploration 1968, University of Nottingham Union, pp. 12-16). The Cueva Laneveru (qv.) probably drains into this system.
+
+\subsection*{Ojo del Rio Vibaña Grid Ref. 5033 9770.}
+
+Both the Arroyo Vibaña and its tributary the Arroyo del Bustillo arise from large resurgences. These were visited, when in flood, by the 1968 expedition. It seemed likely that it would be possible to enter them in low water conditions.
+
+\subsection*{Rotella Shakeholes Grid Ref. 5020 9766.}
+
+A line of very large shakeholes runs westward from Rotella village, lying between the sandstone boundary and the steep scarp of the seaward range. The first of these is said to have a penetrable entrance at the bottom.
+
+\subsection*{Piedra Resurgence Grid Ref. 5059 9793.}
+
+This is the main source of the river which flows into the sea at Barro. The rising is in a pool, and impenetrable. Some 500m, to the west of the rising is a gated cave, the Caverna de Avin, containing prehistoric paintings, open to the public on request, which we have not visited. Running into the pool of the resurgence, from the east, is a small stream, the Arroyo de La Bola. This has its source in the El Mazuco pass, from which it runs along the foot of the northern escarpment. It is fed by a number of risings, many of which are active only in flood, when part of its course becomes a lake. To date, we have found a penetrable cave at only one of these springs (Grid Ref. 5088 9772). This consists of a single vadose passage, running above the stream which can be heard but not seen. The passage is choked with stalagmite after 100m.
+
+\subsection*{Green Sink Grid Ref. 5066 9781.}
+
+A stream, flowing over sandstone, sinks in a pool at the bottom of a large depression. There is no penetrable cave entrance; the water must drain to the Arroyo de la Bola through one or more of the springs mentioned above.
+
+
+\subsection*{Source of the Rio Carrocedo Grid Ref. 5129 9769.}
+
+The Rio Carrocedo, which debouches into the sea at Llanes, is almost dry in its upper reaches during the summer. We have been told that the reason for this is that the resurgence has been dammed and is now the principal water source for the town of Llanes. At the nearby village of La Pereda, near the Bar La Roxia, is another resurgence cave, carrying a small stream which is used locally as a water source. This was entered by the 1969 expedition, but has not been explored.
+
+
+\subsection*{Coastal Plain}
+
+The coastal plain is by no means flat, and many limestone knolls on it contain caves. Many of these are well known locally, and they do not fall within the terms of reference of this report.
+
+
+\subsection*{Southern Scarp}
+
+Southward-dipping sandstone outcrops high on the southern slope of the Sierra de Cuera, following the 600-700m. contour. A line of small springs is seen at the junction, but no cave entrances. In the gentle slopes of the northern side of the Casaño - Cares valley, limestone is met again, and some large cave systems have been explored by Nottingham University expeditions. These are hydrologically quite separate from the Sierra de Cuera, being isolated from it by the thick southward-dipping band of Devonian sandstone.
+
+
+\chapter{Ackonwledgements}
+
+
+Our thanks are due to a large number of individuals and organizations who have helped to make the Expedition such a success. In particular, we must thank Dr. M. M. Sweeting for her help, advice and encouragement, Dr. P. B. Tinker for becoming our Home Agent at very short notice, and J. E. A. Baker, Esq., who had agreed to become our Home Agent but was prevented by other commitments at the last moment. Of the many people who assisted us in Spain, we must mention particularly Snr. Jose M. Suarez Diaz-Estebanez, of the Comite Noroeste de Espeleologia, the Diputación Provincial of Llanes, and the Mayor of Caldueño - Mazuco, all of whom gave us not only permission to work in the area but also every assistance. We owe also a tremendous debt of gratitude to the people of El Mazuco, who helped us in every conceivable way, letting us camp on, and walk over their fields, showing us cave entrances and doing everything possible to make our stay enjoyable.
+
+For financial assistance our thanks are due to the Gilchrist Educational Trust, the Spalding Trust, Oxford University and an anonymous donor. For free supplies of foodstuffs we thank General Foods Ltd. Maxwell House Coffee), Lipton's Ltd. (tea), Ind. Coope Ltd. (beer) and Whitworth Ltd. (raisins).
+
+
+
+
+\chapter*{Bibliography}
+
+\section*{OUCC in Northern Spain}
+This list aims to be a comprehensive bibliography of all expeditions to the Cantabrians in which Oxford University cave Club has taken part. We would be grateful for information of any omissions.
+
+1961 Oxford University Expedition to Northern Spain Preliminary Report, Proc OUCC 1. pp. 5-15 (1962).
+Report, CRG Publication No. 14.
+OUCC 1961 Expedition to Spain, Northern Cavern \& Mine Research Group Newsletter 1 (2).
+1962 OU. Cave Club Expedition to Northern Spain Report, Craven Pothole Club Journal, 3. (2). (1962).
+K. J. Mills \& M. J. Walker (1963), Caving in Spain, 1962. Proc OUCC 2. pp. 5-11.
+1963 Oxford-Derbyshire Expedition to North-West Spain Report, Craven Pothole Club Journal Vol.3(3) (1963).
+M. J. Walker(1964) Oxford-Derbyshire Expedition to N.W. Spain, 1963. Proc OUCC 3. pp. 9-15.
+1964 Small Oxford-Derbyshire expedition.
+M. J. Walker (1965), Caves of the Cantabro-Asturic Mountains. Speleologist Vol. 1 (3), pp. 15-17. (Based on all previous expeditions).
+1965 British Speleological Expedition to the Cantabrian Mountains. Report published by the expedition.
+Report on British Speleological Expedition to the Cantabrian Mts. Craven Pothole Club Journal Vol. 3 (5), (1965).
+Notes on Brit. Spel. Expedition to the Cantabrian Mts. Proc OUCC 4. (1966).
+M.J. Walker 119661, Cave Development in the Western Cantabro-Asturian Mountain Chain. HREF="../../procs/proc4/conts.htm">Proc OUCC 4.p 1
+1966 OU. Cave Club Expedition to N. Spain. No report published - results included in report of 1967 expedition.
+
+1967 Oxford University Expedition to N. Spain. Report. Bull. Oxf. Univ. Explor. Club Vol 16 OUEC. G.C.Cox (1968) Cave Filming in N.Spain. Speleologist2, 1l51,pp. 14-17.
+G.C.Cox (1969) Expeditions Cine, N.W.Spain. CRG Photo. Symp. Trans.CRG Vol. 11, 14), pp. 259-262.
+J. A. Winchester (1970). The Geology of Castro Urdiales. Proc OUCC 5., pp. 5-22.
+1968 Small OUCC expedition in G. C. Cox (1970) Expedition to Spain, 1968. Proc OUCC 5. pp. 23-26.
+1969 Oxford University Cave Club Expedition to N. Spain. Report. Proc OUCC 5. 1970 Oxford University Expedition to N. Spain. Report - this publication.
+
+\section*{Sierra de Cuera}
+
+Speleologists have tended to neglect the Sierra de Cuera in favour of the much higher Picos to the south and the more accessible coastal plain to the north; to the best of our knowledge the OUCC 1968 expedition was the first to investigate active cave systems in the area. Previous work has been concerned with fossil systems; recent work apart from our own has been carried out by the Nottingham University expeditions of 1968 \& 1969. The references cited here are the only ones known to us dealing with the Sierra de Cuera proper.
+
+Symposium - Espeleologia de Asturias. 1955. N. Llopis Lladdo, 1958. Monograf. Geol. (Inst. de Geol. Aplic., Oviedo) No. 10.
+Report - Nottingham University Expedition to the Picos, 1968. Exploration 1968, University of Nottingham Union.
+
+G. Matthews, 1970. Spanish Expedition 1970. Tigguocobauc - NUCC Newsletter, No. 1, pp. 7-14.
+
+
+\chapter*{Appendix I - Photography}
+\textbf{By G.C. Cox}
+
+We intended to obtain a photographic record of all the major caves explored. This presented us with the problem of assembling a lightweight, watertight box of photographic tackle which could be carried while swimming, diving sumps and climbing wet pitches. Fast black and white film was to be used, with this kit, for the difficult wet caves, while colour film and the more sophisticated and valuable cameras would be used for above-ground work, and in the more accessible caves.
+
+In the wet caves a Paxina camera was used. This is a compact folding roll- film camera which was eminently suitable for the purpose. It was simple, yet reasonably versatile. Other components of the 'wet-kit' were two small flashguns, with a 'two-into-one' plug and an extension lead, PF 1 and PF 5 bulbs, and a small towel. This all fitted into a small waterproof metal ammunition box. In practice the box, even though a new seal had been fitted, was not totally watertight, but if it was dried out periodically when immersed for long periods the camera did not get too wet. In fact, it suffered more from wet hands and spray when out of the box taking photographs.
+
+When extra light was needed for large chambers, as in Boriza II, PF 100 bulbs were taken in another ammunition box. These were fired without synchronisation, using open-flash. A robust reflector holder was used, which survived being carried through caves without protection. A tripod had also to be taken when using open flash, adding to the bulk of the equipment.
+
+Colour films used were Anscochrome 500 (500 ASA) and Kodachrome II. The ultra-high-speed Ansco was particularly useful when photographing in and around cave entrances; photographs were taken of Bolugo, Caldueñin and Cortines in flood which would not have been possible with any other film. For cave use, blue flashbulbs were used IPF 16, PF SB and PF 6061. The 35mm cameras used for colour work were transported in a much padded, but not waterproof, wooden ammunition box. Cave photography in colour was confined to the Pozo de Fresno, the entrance chamber of the Cueva de Caldueñin, and the upper level of Callau Roviera, all of which were reasonably accessible and dry.
+
+There were inevitably mishaps with the equipment when using it in these difficult caves; both small flashguns and the Paxina camera frequently gave out through the effects of the ubiquitous water, but drying out always repaired the damage. A reasonably complete record in black and white has been made of La Boriza, Bolugo, Caldueñin Cave and the Nacimiento de Cortines and a very thorough record in both colour and black and white has been made of the main chamber series in Fresno, soon to be converted into a show cave, when much of its pristine beauty may be lost.
+
+Cine filming by the 1967 expedition was reported by Cox (1969, CRG Trans. Vol. 11, No.4, pp. 259-2621.
+
+
+
+
+\chapter*{Appendix II - Surveying notes}
+\textbf{By G.C. Cox}
+
+It had been intended to survey all caves to CRG Grade 4 or better, but our new discoveries were so numerous that this did not prove possible, and only a few caves were surveyed to this grade. For accurate surveying, a small tripod was constructed with legs 20 cm. high and a universal head to carry a large air-filled prismatic compass and an Abney level. For less accurate surveying a Suunto underwater wrist compass was indispensable when surveying in water Bin. deep. Another essential piece of equipment in these caves was a waterproof survey book, with a Perspex cover and Melinex pages, which could be written on with a Chinagraph pencil even under water.
+
+The Pozo de Fresno was surveyed to Grade 4 in 1969, and the only further cave to be surveyed to this grade in 1970 was the Nacimiento de Cortines. This was surveyed to Grade 4-5 C, using the tripod mounted instruments and a fibre-glass tape. Most of the other caves were surveyed to approximately Grade 3, using the wrist compass, though the prismatic was used in Callau Roviera. Distances were paced where possible, estimated where not (as in deep water and tight crawls). Sometimes a tape was used (most of Cueva a Sul, part of Caldueñin. Pitches were, of course, measured by counting ladder rungs. In most cases passage details were noted in the cave, but in Purón only a rough compass and pacing survey, with no details, was made. Beyond the main pitch the Purón survey is Grade 1. The survey of Cueva Laneveru is only grade 1-2 - compass and pacing estimation were used, but it was not noted down until after leaving the cave.
+
+These rough-and-ready surveys are sufficient for most purposes, and there seems in fact to be little point in improving them without surface surveying, since existing topographical maps are not very accurate. A little surface surveying has been carried out: a compass, Abney and tape traverse was made from the Ojo del Rio to the Cueva a Sul, and a detailed and accurate survey has been made of the course of the stream in the Bolugo depression. To expand this work would be difficult and time-consuming, but it might well be rewarding.
+
+
+\chapter*{Appendix III - Notes on Spanish cave names}
+\textbf{By G.C. Cox}
+
+Wherever possible we have avoided giving our own names to caves; it is our experience that there is always someone who knows a local name for a cave. Where we have been unable to discover a local name we have called the cave by the name of the nearest village, or other prominent feature, since this is also common practice among the Spaniards. The names of some of the more remote caves have probably never been written down before; the locals are uncertain about the spelling and we have been given many variants. The main source of confusion is the difference between the Asturian dialect and classical (Castillian) Spanish. Thus in Castillian Spanish v is pronounced as English b, in Asturian it is English v. Asturian o is often pronounced u, and j (ch in Castillian) becomes y. The problems that this can cause are seen in Callau Roviera, which is also spelt Collau Rubieru, and in any intermediate form. The origin and meaning of this name is uncertain, but Callau (or Collau) could easily be a corruption of Collado (the d of which tends to disappear in Asturian speech), meaning a small hill. The Yosa de Viango (an upland meadow), is probably derived from Llosa (enclosure).
+
+Sometimes it is uncertain whether a cave name is one or two words. We were given the name Laneveru as one word, but it must be a corruption of La nevera - the ice house or refrigerator. This may indicate that, like the Cueva d Sul, the cave has been used as a cold-store, or it might simply refer to the icy draught blowing from the entrance. Torca (or Cueva) Lamanga we were sometimes given as one word, sometimes two, but La Manga (the sleeve or hosepipe) is obviously the correct form.
+
+Several of these caves are known by more than one name. The Cueva a Sul is also called Cueva de La Nata (Cave of the Cream) - it is near a remote farm, and has been used for storing dairy produce. (A Sul is probably a corruption of a Sol - in summer the setting sun shines directly through the small entrance for a few minutes, illuminating the chamber inside with a spectacular orange light). The Pozo de Fresno (Pot of the Ash Tree) has also become known, since the proposal to turn it into a show In other areas of Spain speleologists have often been insufficiently specific in giving cave names in published work, so that it can be difficult or impossible to decide to which cave a particular description refers. We hope by giving variant names and spellings, and avoiding new names, to prevent this occurring in the El Mazuco area.
+
+
+\chapter*{Glossary}
+
+
+Agua - water
+Arroyo - stream or stream bed
+Blanca - white
+Camino - road or path
+Collado - small hill
+Cueva - Cave
+De - of
+Fresno - ash tree
+Fuente - spring
+Hierro - iron
+Llosa - enclosure
+Manga - sleeve or hosepipe
+Mina - Mine
+Nacimiento - source or birth
+Nata - cream
+Nevera - ice-house or refrigerator
+Ojo - eye Peña / Pico - peak
+Pozo - pothole or well
+Rio - river
+Sierra - range (of mountains)
+Sima - shaft
+Torcona - large shaft
+Valle - valley
+
+
+\chapter*{Appendix IV - Finances}
+
+INCOME
+Personal Contributions 235.14
+Oxford University 75.00
+Gilchrist Educational Trust 90.00
+Spalding Trust 10.00
+Anonymous gift 20.00
+----------
+430.14
+
+EXPENDITURE
+Fares and Tolls 147.50
+Insurance 46.95
+Tackle 20.60
+Photographic 10.68
+Vehicle repairs and sundries 59.95
+Petrol 66.89
+Camping and Accomodation 10.98
+Parafin, carbide, meths, charging 6.48
+Losses on exchange 2.97
+Cheque Book 25
+Report Publication 50.00
+Miscellaneous 6.87
+----------
+430.14
+
+These pages were scanned in by Bill Collis.
+
+%\chapter*{References}
+%\bibliographystyle{ieeetr}
+%\printbibliography
+\bibliographystyle{ieeetr}
+%\renewcommand\bibname{References}
+%\bibliography{report_mendeley}
+
+%==============================================================================
+%==============================================================================
+
+\end{document}

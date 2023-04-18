@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+The style file: ieeetr.bst
+Database file #1: report_mendeley.bib
+Warning--I didn't find a database entry for "refs_only_dynamic_pressure"
+Warning--I didn't find a database entry for "Karkehabadi_PhD"
+Warning--I didn't find a database entry for "Palacios"
+Warning--I didn't find a database entry for "xrotor"
+Warning--I didn't find a database entry for "Comparison_between_blade_element_models_of_propellers"
+Warning--I didn't find a database entry for "ref_28_Nando"
+Warning--I didn't find a database entry for "ref_54_nando"
+Warning--I didn't find a database entry for "ESDU_TM193"
+Warning--empty journal in Simpson2016
+Warning--empty journal in Miranda1976
+Warning--empty journal in Proulx-Cabana
+Warning--empty year in Proulx-Cabana
+Warning--empty journal in Leng2019
+Warning--empty journal in Goates2018
+Warning--empty journal in Viterna1982
+Warning--empty journal in Takarics2021
+You've used 90 entries,
+            1876 wiz_defined-function locations,
+            1034 strings with 19048 characters,
+and the built_in function-call counts, 20629 in all, are:
+= -- 2077
+> -- 783
+< -- 1
++ -- 304
+- -- 214
+* -- 1413
+:= -- 3035
+add.period$ -- 102
+call.type$ -- 90
+change.case$ -- 87
+chr.to.int$ -- 0
+cite$ -- 98
+duplicate$ -- 1063
+empty$ -- 1993
+format.name$ -- 214
+if$ -- 4977
+int.to.chr$ -- 0
+int.to.str$ -- 90
+missing$ -- 79
+newline$ -- 286
+num.names$ -- 90
+pop$ -- 271
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 618
+stack$ -- 0
+substring$ -- 1198
+swap$ -- 372
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 217
+width$ -- 92
+write$ -- 855
+(There were 16 warnings)
